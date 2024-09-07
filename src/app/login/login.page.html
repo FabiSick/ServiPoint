@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="text-center">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="w-100" style="max-width: 400px;">
+      <!-- Campo de texto de Angular Material para el nombre de usuario -->
+      <mat-form-field appearance="fill" class="w-100 mb-3">
+        <mat-label>Nombre de Usuario</mat-label>
+        <input matInput type="text" required [(ngModel)]="username" name="username">
+      </mat-form-field>
+
+      <!-- Campo de texto de Angular Material para la contraseña -->
+      <mat-form-field appearance="fill" class="w-100 mb-3">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" required [(ngModel)]="password" name="password" #passwordInput="ngModel"
+          [pattern]="passwordPattern">
+      </mat-form-field>
+
+      <!-- Mensaje de error de contraseña -->
+      <ion-text color="danger" *ngIf="passwordInput.invalid && passwordInput.touched" class="mb-3">
+        La contraseña debe tener al menos 4 números, 3 caracteres especiales y 1 mayúscula.
+      </ion-text>
+
+      <!-- Botón de Angular Material para ingresar -->
+      <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.form.valid" class="w-100 mb-2">
+        INGRESAR
+      </button>
+    </form>
+
+    <!-- Botón de Angular Material para restablecer la contraseña -->
+    <button mat-button color="accent" (click)="goToResetPassword()" class="mt-3">
+      ¿Olvidaste tu contraseña?
+    </button>
+  </div>
+</ion-content>

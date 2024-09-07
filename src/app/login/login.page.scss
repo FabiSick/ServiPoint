@@ -1,0 +1,110 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f8ff; /* Fondo de color azul claro */
+}
+
+ion-content {
+  --background: #f0f8ff; /* Fondo de color azul claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.form-container {
+  width: 90%;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+ion-item {
+  --background: #ffffff;
+  margin-bottom: 15px;
+}
+
+ion-button,
+button[mat-button] {
+  margin-top: 20px;
+  width: 100%;
+  --background: #ff6f61; /* Botones de color naranja vivo */
+  --background-activated: #ff3b3b;
+  --background-focused: #ff8a80;
+  --border-radius: 12px;
+  --color: white;
+  font-size: 18px;
+}
+
+.example-button-row {
+  margin-top: 15px;
+}
+
+a[mat-button] {
+  color: #3b5998; /* Color azul vivo */
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+body {
+  background-color: #f0f8ff; /* Fondo azul claro */
+  color: #333; /* Texto oscuro */
+}
+
+ion-header {
+  background-color: #1e90ff; /* Barra superior azul vivo */
+  color: white; /* Texto blanco */
+}
+
+button.mat-raised-button {
+  font-weight: bold;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+button.mat-raised-button:hover {
+  transform: scale(1.05); /* Efecto de hover */
+}
+
+.mat-form-field {
+  background-color: white; /* Fondo blanco para los campos de entrada */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+.mat-input-element {
+  color: #333; /* Color del texto de entrada */
+}
+  
+body {
+  background-color: #f0f8ff; /* Fondo azul claro */
+  color: #333; /* Texto oscuro */
+}
+
+ion-header {
+  background-color: #1e90ff; /* Barra superior azul vivo */
+  color: white; /* Texto blanco */
+}
+
+button.mat-raised-button {
+  font-weight: bold;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+button.mat-raised-button:hover {
+  transform: scale(1.05); /* Efecto de hover */
+}
+
+.mat-form-field {
+  background-color: white; /* Fondo blanco para los campos de entrada */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+.mat-input-element {
+  color: #333; /* Color del texto de entrada */
+}
