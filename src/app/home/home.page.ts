@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,15 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 export class HomePage {
 
   nombreUsuario: string = ''; // Declarar la propiedad para almacenar el nombre de usuario
-  router: any;
-
-  constructor(private route: ActivatedRoute) {
+  
+  constructor(private route: ActivatedRoute, private router: Router) { 
     // Recuperar el nombre de usuario de los parámetros de la ruta
     this.route.queryParams.subscribe(params => {
       this.nombreUsuario = params['nombre_usuario'] || ''; // Asignar el valor recibido o una cadena vacía si no existe
     });
   }
   goTologin() {
-    this.router.navigate(['/registro']);
+    this.router.navigate(['/login']);
   }
 }

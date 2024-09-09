@@ -20,7 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     LoginPageRoutingModule,
     MatButtonModule,
     MatInputModule,
-    MatFormFieldModule, // Asegúrate de importar estos módulos
+    MatFormFieldModule // Asegúrate de importar estos módulos
   ],
   declarations: [LoginPage]
 })
