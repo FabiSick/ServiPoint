@@ -16,5 +16,6 @@ import { RegistroPage } from './registro.page';
     RegistroPageRoutingModule
   ],
   declarations: [RegistroPage]
+  
 })
 export class RegistroPageModule {}
