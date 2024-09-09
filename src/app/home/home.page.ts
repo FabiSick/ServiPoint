@@ -17,7 +17,7 @@ export class HomePage {
       this.nombreUsuario = params['nombre_usuario'] || ''; // Asignar el valor recibido o una cadena vacía si no existe
     });
   }
-  goToregistro() {
+  goTologin() {
     this.router.navigate(['/registro']);
   }
 }

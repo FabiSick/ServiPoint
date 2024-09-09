@@ -53,7 +53,7 @@ a[mat-button] {
 
 body {
   background-color: #f0f8ff; /* Fondo azul claro */
-  color: #333; /* Texto oscuro */
+  color: #000000; /* Texto oscuro */
 }
 
 ion-header {
@@ -77,12 +77,12 @@ button.mat-raised-button:hover {
 }
 
 .mat-input-element {
-  color: #333; /* Color del texto de entrada */
+  color: #000000; /* Color del texto de entrada */
 }
   
 body {
   background-color: #f0f8ff; /* Fondo azul claro */
-  color: #333; /* Texto oscuro */
+  color: #000000; /* Texto oscuro */
 }
 
 ion-header {
@@ -136,7 +136,7 @@ ion-card-subtitle {
 /* Estilos adicionales para ion-content */
 ion-content {
   --background: #e0f7fa; /* Fondo de color azul claro */
-  color: #8c8c8c; /* Texto en color oscuro para mejor contraste */
+  color: #dedede; /* Texto en color oscuro para mejor contraste */
 }
 
 /* Estilos para los botones de Angular Material */
