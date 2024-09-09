@@ -35,3 +35,48 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/* Fondo claro para la aplicación */
+body {
+    background-color: #f0f8ff; /* Azul claro */
+    color: #333; /* Texto en color oscuro */
+  }
+  
+  /* Estilos para la barra superior */
+  ion-header {
+    background-color: #1e90ff; /* Azul vivo */
+    color: white;
+  }
+  
+  /* Botones de Angular Material */
+  button.mat-raised-button {
+    font-weight: bold;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+  }
+  
+  button.mat-raised-button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Estilos para ion-card */
+  ion-card {
+    --background: #ffffff; /* Fondo blanco */
+    --color: #009688; /* Texto verde azulado */
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+  }
+  
+  ion-card-title {
+    --color: #00695c; /* Verde azulado oscuro para el título */
+    font-weight: bold;
+    font-size: 1.5rem; 
+  }
+  
+  ion-card-subtitle {
+    --color: #00796b; /* Verde medio para el subtítulo */
+    font-size: 1rem; 
+    margin-bottom: 12px;
+  }
+  

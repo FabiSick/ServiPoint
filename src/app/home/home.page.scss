@@ -108,3 +108,57 @@ button.mat-raised-button:hover {
 .mat-input-element {
   color: #333; /* Color del texto de entrada */
 }
+
+/* Estilos para el ion-card */
+ion-card {
+  --background: #ffffff; /* Fondo blanco para mantenerlo claro */
+  --color: #009688; /* Texto de color verde azulado */
+  border-radius: 10px; /* Bordes redondeados para darle un aspecto moderno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
+  padding: 16px; /* Espaciado interno */
+}
+
+/* Estilos para el título del ion-card */
+ion-card-title {
+  --color: #00695c; /* Verde azulado oscuro para el título */
+  font-weight: bold;
+  font-size: 1.5rem; /* Tamaño de fuente más grande para destacar */
+  margin-bottom: 8px; /* Espaciado debajo del título */
+}
+
+/* Estilos para el subtítulo del ion-card */
+ion-card-subtitle {
+  --color: #00796b; /* Verde medio para el subtítulo */
+  font-size: 1rem; /* Tamaño de fuente ligeramente más pequeño */
+  margin-bottom: 12px; /* Espaciado debajo del subtítulo */
+}
+
+/* Estilos adicionales para ion-content */
+ion-content {
+  --background: #e0f7fa; /* Fondo de color azul claro */
+  color: #8c8c8c; /* Texto en color oscuro para mejor contraste */
+}
+
+/* Estilos para los botones de Angular Material */
+button.mat-raised-button {
+  background-color: #00bcd4 !important; /* Azul claro para los botones */
+  color: white !important;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+  font-weight: bold;
+}
+
+button.mat-raised-button:hover {
+  transform: scale(1.05); /* Efecto hover para los botones */
+  background-color: #00838f !important; /* Azul más oscuro al pasar el ratón */
+}
+
+ion-menu::part(backdrop) {
+  background-color: rgba(0, 255, 234, 0.5);
+}
+
+ion-menu::part(container) {
+  border-radius: 0 20px 20px 0;
+
+  box-shadow: 4px 0px 16px rgba(52, 52, 52, 0.18);
+}
