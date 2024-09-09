@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class HomePage {
 
   nombreUsuario: string = ''; // Declarar la propiedad para almacenar el nombre de usuario
+  router: any;
 
   constructor(private route: ActivatedRoute) {
     // Recuperar el nombre de usuario de los parámetros de la ruta
@@ -16,5 +17,7 @@ export class HomePage {
       this.nombreUsuario = params['nombre_usuario'] || ''; // Asignar el valor recibido o una cadena vacía si no existe
     });
   }
-
+  goToregistro() {
+    this.router.navigate(['/registro']);
+  }
 }

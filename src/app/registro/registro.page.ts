@@ -7,7 +7,7 @@ import * as $ from 'jquery';
   templateUrl: './registro.page.html',
   styleUrls: ['./registro.page.scss'],
 })
-export class RegisterPage implements AfterViewInit {
+export class RegistroPage implements AfterViewInit {
 
   constructor() { }
 
