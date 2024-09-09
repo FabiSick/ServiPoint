@@ -36,4 +36,7 @@ export class LoginPage {
   goToResetPassword() {
     this.router.navigate(['/reset-password']);
   }
+  goToRegistro() {
+    this.router.navigate(['/registro1']);
+  }
 }
