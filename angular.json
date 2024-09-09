@@ -37,7 +37,9 @@
               "src/theme/variables.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
