@@ -17,14 +17,14 @@
   .form-container {
     width: 90%;
     max-width: 400px;
-    background: white;
+    background: rgb(0, 0, 0);
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(22, 21, 21, 0.1);
   }
   
   ion-item {
-    --background: #ffffff;
+    --background: #96acce;
     margin-bottom: 15px;
   }
   
@@ -32,7 +32,7 @@
   button[mat-button] {
     margin-top: 20px;
     width: 100%;
-    --background: #ff6f61; /* Botones de color naranja vivo */
+    --background: #6166ff; /* Botones de color naranja vivo */
     --background-activated: #ff3b3b;
     --background-focused: #ff8a80;
     --border-radius: 12px;
@@ -53,12 +53,12 @@
   
   body {
     background-color: #f0f8ff; /* Fondo azul claro */
-    color: #000000; /* Texto oscuro */
+    color: #718ad5; /* Texto oscuro */
   }
   
   ion-header {
     background-color: #1e90ff; /* Barra superior azul vivo */
-    color: white; /* Texto blanco */
+    color: rgb(0, 0, 0); /* Texto blanco */
   }
   
   button.mat-raised-button {
@@ -77,7 +77,7 @@
   }
   
   .mat-input-element {
-    color: #000000; /* Color del texto de entrada */
+    color: #4aa4ed; /* Color del texto de entrada */
   }
     
   body {
@@ -111,7 +111,7 @@
   
   /* Estilos para el ion-card */
   ion-card {
-    --background: #ffffff; /* Fondo blanco para mantenerlo claro */
+    --background: #0a0909; /* Fondo blanco para mantenerlo claro */
     --color: #009688; /* Texto de color verde azulado */
     border-radius: 10px; /* Bordes redondeados para darle un aspecto moderno */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
@@ -136,7 +136,7 @@
   /* Estilos adicionales para ion-content */
   ion-content {
     --background: #e0f7fa; /* Fondo de color azul claro */
-    color: #dedede; /* Texto en color oscuro para mejor contraste */
+    color: #060606; /* Texto en color oscuro para mejor contraste */
   }
   
   /* Estilos para los botones de Angular Material */
