@@ -43,6 +43,52 @@
            </ion-card-content>
         </ion-card>
       </div>
+      <ion-grid>
+        <ion-row>
+          <!-- Primera tarjeta en la primera columna -->
+          <ion-col size="6"> <!-- 'size="6"' indica que la tarjeta ocupará el 50% del ancho de la fila -->
+            <ion-card routerLink="/details"> 
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+              <ion-card-header>
+                <ion-card-title>Asistencia Guiada</ion-card-title>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+    
+          <!-- Segunda tarjeta en la segunda columna -->
+          <ion-col size="6"> <!-- 'size="6"' indica que la tarjeta ocupará el 50% del ancho de la fila -->
+            <ion-card routerLink="/details"> 
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+              <ion-card-header>
+                <ion-card-title>Asistencia Remota</ion-card-title>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+    
+        <!-- Otra fila de tarjetas -->
+        <ion-row>
+          <!-- Tercera tarjeta en la primera columna -->
+          <ion-col size="6">
+            <ion-card routerLink="/details"> 
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+              <ion-card-header>
+                <ion-card-title>Asistencia CHAT</ion-card-title>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+    
+          <!-- Cuarta tarjeta en la segunda columna -->
+          <ion-col size="6">
+            <ion-card routerLink="/details"> 
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+              <ion-card-header>
+                <ion-card-title>Asistencia Telefonica</ion-card-title>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-content>
   </div>
 
