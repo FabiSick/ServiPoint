@@ -12,10 +12,21 @@
             <ion-card-title>{{ nombreUsuario }}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
+            <ion-button expand="full" color="primary" (click)="goToAccountSettings()">
+              Actualizar Perfil
+            </ion-button>
+            
+            <ion-button expand="full" color="secondary" (click)="goToServiceHistory()">
+              Historial de Actividad
+            </ion-button>
+
+            <ion-button expand="full" color="tertiary" (click)="goToChangePassword()">
+              Cambiar Contraseña
+            </ion-button>
+
             <button mat-button color="accent" (click)="logout()" class="mt-3">
               Cerrar sesión
             </button>
-        
           </ion-card-content>
         </ion-card>
       </div>
