@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { ApiService } from '../services/api.service';  // Importamos el servicio
+import { ApiService } from '../services/api.service';  // Importamos el servicio de API
+import { SqliteService } from '../services/sqlite.service';  // Servicio de SQLite
 import * as $ from 'jquery';
 //Ocupar comando para declarar jquery'i --save-dev @types/jquery 
 import { Router } from '@angular/router';
@@ -11,8 +12,17 @@ import { Router } from '@angular/router';
 })
 export class RegistroPage implements AfterViewInit {
 
-  constructor(private apiService: ApiService, private router: Router) { }  // Inyectamos ApiService y Router
+  constructor(
+    private apiService: ApiService, // Inyectamos API
+    private sqliteService: SqliteService,  // Inyectamos el servicio de SQLite
+    private router: Router) { }  // Inyectamos Router
 
+
+  async ngOnInit() {
+      // Inicializamos la base de datos cuando el componente se monta
+    await this.sqliteService.createDatabase();
+  }
+  
   ngAfterViewInit() {
     // Validaciones de jQuery después de que la vista se ha inicializado
     $('#submitBtn').click((event) => {
@@ -67,8 +77,12 @@ export class RegistroPage implements AfterViewInit {
         };
 
         // Llamamos al servicio ApiService para registrar el usuario
-        this.apiService.registerUser(newUser).subscribe(response => {
+        this.apiService.registerUser(newUser).subscribe(async response => {
           alert('Usuario registrado exitosamente.');
+        // Después de registrar en la API, guardamos también el usuario en SQLite
+          await this.sqliteService.addUser(name!, password!, role);
+          alert('Usuario registrado exitosamente en la base de datos local.');
+
           console.log('Respuesta de la API:', response);
           this.router.navigate(['/login']);  // Redirigir al usuario a la página de inicio de sesión
         }, error => {
