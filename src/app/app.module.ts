@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //PERSISTENCIA
 import { IonicStorageModule } from '@ionic/storage-angular';
+// Importar el modulo HTTP
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +30,10 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     MatInputModule,
     MatFormFieldModule,
     //PERSISTENCIA
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    //Importar modulo API
+    HttpClientModule  
+
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, provideAnimationsAsync()],
   bootstrap: [AppComponent],

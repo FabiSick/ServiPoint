@@ -1,7 +1,9 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-
+import { ApiService } from '../services/api.service';  // Importamos el servicio
 import * as $ from 'jquery';
 //Ocupar comando para declarar jquery'i --save-dev @types/jquery 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
@@ -9,7 +11,7 @@ import * as $ from 'jquery';
 })
 export class RegistroPage implements AfterViewInit {
 
-  constructor() { }
+  constructor(private apiService: ApiService, private router: Router) { }  // Inyectamos ApiService y Router
 
   ngAfterViewInit() {
     // Validaciones de jQuery después de que la vista se ha inicializado
@@ -17,44 +19,62 @@ export class RegistroPage implements AfterViewInit {
       event.preventDefault();
       let isValid = true;
 
+      // Obtener los valores del formulario
+      const name = $('#name').val()?.toString();
+      const email = $('#email').val()?.toString();
+      const password = $('#password').val()?.toString();
+      const role = 'user';  // Aquí podrías hacer que el usuario seleccione un rol si lo deseas
+
       // Validar campo de Nombre
-      const name = $('#name').val();
       if (!name) {
         alert('El nombre es requerido.');
         isValid = false;
       }
 
       // Validar campo de Correo Electrónico
-      const email = $('#email').val();
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!email) {
         alert('El correo electrónico es requerido.');
         isValid = false;
-      } else if (!emailPattern.test(email.toString())) {
+      } else if (!emailPattern.test(email)) {
         alert('Por favor, ingresa un correo electrónico válido.');
         isValid = false;
       }
+
       // Expresión regular para validar la contraseña
-      // Patrón para validar la contraseña
       const passwordPattern = /^(?=(.*\d){4})(?=(.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>/?]){3})(?=.*[A-Z]).*$/;
 
       // Validar campo de Contraseña
-      const password = $('#password').val();
       if (!password) {
         alert('La contraseña es requerida.');
         isValid = false;
-      } else if (password.toString().length < 6) {
+      } else if (password.length < 6) {
         alert('La contraseña debe tener al menos 6 caracteres.');
         isValid = false;
-      } else if (!passwordPattern.test(password.toString())) {
+      } else if (!passwordPattern.test(password)) {
         alert('La contraseña debe contener al menos 4 dígitos, 3 caracteres especiales y 1 letra mayúscula.');
         isValid = false;
       }
 
       // Si todas las validaciones son correctas
       if (isValid) {
-        alert('Formulario válido. Procesando registro...');
-        // Aquí puedes realizar la lógica de negocio, como enviar los datos a un servidor
+        // Enviamos los datos a la API para registrar el usuario
+        const newUser = {
+          username: name,
+          email: email,
+          password: password,
+          role: role
+        };
+
+        // Llamamos al servicio ApiService para registrar el usuario
+        this.apiService.registerUser(newUser).subscribe(response => {
+          alert('Usuario registrado exitosamente.');
+          console.log('Respuesta de la API:', response);
+          this.router.navigate(['/login']);  // Redirigir al usuario a la página de inicio de sesión
+        }, error => {
+          console.error('Error al registrar el usuario:', error);
+          alert('Hubo un error al registrar el usuario.');
+        });
       }
     });
   }

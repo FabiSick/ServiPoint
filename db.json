@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "Spoint1234...",
+      "role": "admin"
+    },
+    {
+      "id": "47ec",
+      "username": "Carla",
+      "email": "carly.alejandra@icloud.com",
+      "password": "cARL1234...",
+      "role": "user"
+    }
+  ]
+}
