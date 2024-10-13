@@ -34,6 +34,9 @@ export class RegistroPage implements AfterViewInit {
         alert('Por favor, ingresa un correo electrónico válido.');
         isValid = false;
       }
+      // Expresión regular para validar la contraseña
+      // Patrón para validar la contraseña
+      const passwordPattern = /^(?=(.*\d){4})(?=(.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>/?]){3})(?=.*[A-Z]).*$/;
 
       // Validar campo de Contraseña
       const password = $('#password').val();
@@ -42,6 +45,9 @@ export class RegistroPage implements AfterViewInit {
         isValid = false;
       } else if (password.toString().length < 6) {
         alert('La contraseña debe tener al menos 6 caracteres.');
+        isValid = false;
+      } else if (!passwordPattern.test(password.toString())) {
+        alert('La contraseña debe contener al menos 4 dígitos, 3 caracteres especiales y 1 letra mayúscula.');
         isValid = false;
       }
 

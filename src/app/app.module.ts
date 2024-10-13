@@ -14,6 +14,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+//PERSISTENCIA
+import { IonicStorageModule } from '@ionic/storage-angular';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -23,7 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule, // Necesario para Angular Material
     MatButtonModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    //PERSISTENCIA
+    IonicStorageModule.forRoot()
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, provideAnimationsAsync()],
   bootstrap: [AppComponent],
