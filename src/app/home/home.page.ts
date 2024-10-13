@@ -29,6 +29,24 @@ export class HomePage implements OnInit {
       }
     });
   }
+
+  // Método para ir al perfil
+  goToProfile() {
+    this.router.navigate(['/profile']);
+  }
+  // Método para ir a la configuración de la cuenta
+  goToAccountSettings() {
+    this.router.navigate(['/account-settings']);
+  }
+
+  // Método para ir al historial de servicios
+  goToServiceHistory() {
+    this.router.navigate(['/service-history']);
+  }
+  goToChangePassword() {
+    this.router.navigate(['/change-password']);
+  }
+  // Método para cerrar session por medio de Persistencia/Storage
   async logout() {
     await this.storage.remove('nombre_usuario');
     this.router.navigate(['/login']);
