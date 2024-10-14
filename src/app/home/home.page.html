@@ -1,8 +1,8 @@
 <ion-content [fullscreen]="true">
   <ion-menu contentId="main-content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>ServiPoint</ion-title>
+    <ion-header [translucent]="true">
+      <ion-toolbar class="custom-toolbar">
+        <ion-title class="text-center">ServiPoint</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding"> 
@@ -33,7 +33,6 @@
     </ion-content>
   </ion-menu>
 
-  
   <div class="ion-page" id="main-content">
     <ion-header>
       <ion-toolbar>
@@ -56,50 +55,50 @@
       </div>
       <ion-grid>
         <ion-row>
-          <!-- Primera tarjeta en la primera columna -->
-          <ion-col size="6"> <!-- 'size="6"' indica que la tarjeta ocupará el 50% del ancho de la fila -->
-            <ion-card routerLink="/details"> 
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+          <!-- Primera tarjeta: Asistencia Guiada -->
+          <ion-col size="6">
+            <ion-card routerLink="/details" class="selectable-card">
+              <img alt="Asistencia Guiada" src="assets/img/Ayuda-Guiada.png" />
               <ion-card-header>
-                <ion-card-title>Asistencia Guiada</ion-card-title>
+                <ion-card-title>Ayuda Guiada</ion-card-title>
               </ion-card-header>
             </ion-card>
           </ion-col>
-    
-          <!-- Segunda tarjeta en la segunda columna -->
-          <ion-col size="6"> <!-- 'size="6"' indica que la tarjeta ocupará el 50% del ancho de la fila -->
-            <ion-card routerLink="/details"> 
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+      
+          <!-- Segunda tarjeta: Asistencia Remota -->
+          <ion-col size="6">
+            <ion-card routerLink="/details" class="selectable-card">
+              <img alt="Asistencia Remota" src="assets/img/Ayuda-Remota.png" />
               <ion-card-header>
-                <ion-card-title>Asistencia Remota</ion-card-title>
+                <ion-card-title>Soporte Remoto</ion-card-title>
               </ion-card-header>
             </ion-card>
           </ion-col>
         </ion-row>
-    
-        <!-- Otra fila de tarjetas -->
+      
         <ion-row>
-          <!-- Tercera tarjeta en la primera columna -->
+          <!-- Tercera tarjeta: Asistencia CHAT -->
           <ion-col size="6">
-            <ion-card routerLink="/details"> 
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            <ion-card routerLink="/details" class="selectable-card">
+              <img alt="Asistencia CHAT" src="assets/img/Ayuda-Chat.png" />
               <ion-card-header>
-                <ion-card-title>Asistencia CHAT</ion-card-title>
+                <ion-card-title>Ayuda CHAT</ion-card-title>
               </ion-card-header>
             </ion-card>
           </ion-col>
-    
-          <!-- Cuarta tarjeta en la segunda columna -->
+      
+          <!-- Cuarta tarjeta: Asistencia Telefónica -->
           <ion-col size="6">
-            <ion-card routerLink="/details"> 
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            <ion-card routerLink="/details" class="selectable-card">
+              <img alt="Asistencia Telefónica" src="assets/img/Ayuda-Tel.png" />
               <ion-card-header>
-                <ion-card-title>Asistencia Telefonica</ion-card-title>
+                <ion-card-title>Soporte Tel.</ion-card-title>
               </ion-card-header>
             </ion-card>
           </ion-col>
         </ion-row>
-      </ion-grid>
+      </ion-grid>    
+      
     </ion-content>
   </div>
 

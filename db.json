@@ -12,6 +12,13 @@
       "email": "carly.alejandra@icloud.com",
       "password": "cARL1234...",
       "role": "user"
+    },
+    {
+      "id": "bdd1",
+      "username": "Fabian",
+      "email": "fabisick@gmai.com",
+      "password": "Contra;1234..",
+      "role": "user"
     }
   ]
 }

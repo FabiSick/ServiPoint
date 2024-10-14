@@ -6,12 +6,27 @@
   background-color: #f0f8ff; /* Fondo de color azul claro */
 }
 
+.custom-toolbar {
+  --background: #007bff; /* Fondo azul */
+  --color: #ffffff; /* Letras blancas */
+  --border-color: transparent; /* Eliminar el borde por defecto */
+}
+
+ion-title {
+  font-size: 1.6rem; /* Aumenta un poco más el tamaño del texto */
+  font-weight: bold; /* Texto en negrita */
+  text-align: center;
+  line-height: 1.5; /* Asegura que la "G" no se corte */
+  letter-spacing: 0.5px; /* Aumenta el espacio entre las letras */
+}
+
 ion-content {
   --background: #cae6fe; /* Fondo de color azul claro */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 16px; /* Espaciado para mejorar el diseño */
 }
 
 .form-container {
@@ -23,142 +38,95 @@ ion-content {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-ion-item {
-  --background: #ffffff;
-  margin-bottom: 15px;
-}
-
-ion-button,
-button[mat-button] {
-  margin-top: 20px;
-  width: 100%;
-  --background: #ff6f61; /* Botones de color naranja vivo */
-  --background-activated: #ff3b3b;
-  --background-focused: #ff8a80;
-  --border-radius: 12px;
-  --color: white;
-  font-size: 18px;
-}
-
-.example-button-row {
-  margin-top: 15px;
-}
-
-a[mat-button] {
-  color: #3b5998; /* Color azul vivo */
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 15px;
-}
-
-body {
-  background-color: #f0f8ff; /* Fondo azul claro */
-  color: #000000; /* Texto oscuro */
-}
-
-ion-header {
-  background-color: #1e90ff; /* Barra superior azul vivo */
-  color: white; /* Texto blanco */
-}
-
-button.mat-raised-button {
-  font-weight: bold;
-  border-radius: 8px;
-  transition: transform 0.2s ease;
-}
-
-button.mat-raised-button:hover {
-  transform: scale(1.05); /* Efecto de hover */
-}
-
-.mat-form-field {
-  background-color: white; /* Fondo blanco para los campos de entrada */
-  border-radius: 8px; /* Bordes redondeados */
-}
-
-.mat-input-element {
-  color: #000000; /* Color del texto de entrada */
-}
-  
-body {
-  background-color: #f0f8ff; /* Fondo azul claro */
-  color: #000000; /* Texto oscuro */
-}
-
-ion-header {
-  background-color: #1e90ff; /* Barra superior azul vivo */
-  color: white; /* Texto blanco */
-}
-
-button.mat-raised-button {
-  font-weight: bold;
-  border-radius: 8px;
-  transition: transform 0.2s ease;
-}
-
-button.mat-raised-button:hover {
-  transform: scale(1.05); /* Efecto de hover */
-}
-
-.mat-form-field {
-  background-color: white; /* Fondo blanco para los campos de entrada */
-  border-radius: 8px; /* Bordes redondeados */
-}
-
-.mat-input-element {
-  color: #333; /* Color del texto de entrada */
-}
-
-/* Estilos para el ion-card */
 ion-card {
-  --background: #ffffff; /* Fondo blanco para mantenerlo claro */
-  --color: #009688; /* Texto de color verde azulado */
-  border-radius: 10px; /* Bordes redondeados para darle un aspecto moderno */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
-  padding: 16px; /* Espaciado interno */
+  --background: #ffffff;
+  --color: #004085; /* Texto oscuro para buen contraste */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  text-align: center; /* Centrar el contenido */
+  padding: 10px; /* Espaciado interno */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transición suave */
+
+  /* Agregar borde y efecto al hacer clic */
+  &:hover, &:focus {
+    transform: scale(1.05); /* Ampliar levemente al hacer hover */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  }
 }
 
-/* Estilos para el título del ion-card */
 ion-card-title {
-  --color: #00695c; /* Verde azulado oscuro para el título */
   font-weight: bold;
-  font-size: 1.5rem; /* Tamaño de fuente más grande para destacar */
-  margin-bottom: 8px; /* Espaciado debajo del título */
+  font-size: 1.2rem; /* Tamaño de texto más pequeño para evitar que se corte */
+  margin-top: 10px;
+  white-space: normal; /* Asegura que el título haga un salto de línea si es necesario */
 }
 
-/* Estilos para el subtítulo del ion-card */
-ion-card-subtitle {
-  --color: #00796b; /* Verde medio para el subtítulo */
-  font-size: 1rem; /* Tamaño de fuente ligeramente más pequeño */
-  margin-bottom: 12px; /* Espaciado debajo del subtítulo */
+ion-card-content {
+  font-size: 1rem; /* Ajuste del tamaño del texto */
+  color: #555555; /* Color más claro para el contenido */
+  margin-top: 5px;
 }
 
-/* Estilos adicionales para ion-content */
-ion-content {
-  --background: #e0f7fa; /* Fondo de color azul claro */
-  color: #dedede; /* Texto en color oscuro para mejor contraste */
+img {
+  width: 100%;
+  border-radius: 10px; /* Bordes redondeados para las imágenes */
+  margin-bottom: 10px;
 }
 
-/* Estilos para los botones de Angular Material */
-button.mat-raised-button {
-  background-color: #00bcd4 !important; /* Azul claro para los botones */
-  color: white !important;
-  border-radius: 8px;
-  transition: transform 0.2s ease;
-  font-weight: bold;
-}
 
-button.mat-raised-button:hover {
-  transform: scale(1.05); /* Efecto hover para los botones */
-  background-color: #00838f !important; /* Azul más oscuro al pasar el ratón */
+/* Estilos para el menú desplegable */
+ion-menu::part(container) {
+  background-color: #007bff !important; /* Cambiamos el fondo del menú a azul brillante con prioridad */
+  color: white !important; /* Texto en blanco para mejor contraste */
+  border-radius: 0 20px 20px 0;
+  box-shadow: 4px 0px 16px rgba(52, 52, 52, 0.18);
 }
 
 ion-menu::part(backdrop) {
-  background-color: rgba(0, 255, 234, 0.5);
+  background-color: rgba(0, 123, 255, 0.5) !important; /* Color translúcido del backdrop */
 }
 
+/* Estilos para el menú desplegable */
 ion-menu::part(container) {
+  background-color: #007bff; /* Cambiamos el fondo del menú a azul brillante */
+  color: white; /* Texto en blanco para mejor contraste */
   border-radius: 0 20px 20px 0;
-
   box-shadow: 4px 0px 16px rgba(52, 52, 52, 0.18);
 }
+
+ion-menu::part(backdrop) {
+  background-color: rgba(0, 123, 255, 0.5); /* Color translúcido del backdrop */
+}
+
+/* Opciones dentro del menú */
+.menu-button {
+  background-color: #005bb5 !important; /* Azul más oscuro para los botones dentro del menú */
+  color: white !important;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.menu-button:hover {
+  background-color: #004080; /* Azul más oscuro al hacer hover */
+}
+
+/* Estilo para el botón de cerrar sesión */
+.logout-button {
+  color: #ffffff; /* Texto blanco para visibilidad */
+  font-weight: bold;
+}
+
+.logout-button:hover {
+  color: #f0f0f0; /* Color ligeramente más claro al hacer hover */
+}
+
+/* Estilo adicional para asegurar que el diseño sea accesible */
+ion-card-content {
+  font-size: 1rem; /* Tamaño más grande para mejor visibilidad */
+  color: #333; /* Color oscuro para contraste */
+}
+

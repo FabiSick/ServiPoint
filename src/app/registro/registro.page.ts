@@ -25,7 +25,7 @@ export class RegistroPage implements AfterViewInit {
   
   ngAfterViewInit() {
     // Validaciones de jQuery después de que la vista se ha inicializado
-    $('#submitBtn').click((event) => {
+    $('#submitBtn').click(async (event) => {
       event.preventDefault();
       let isValid = true;
 

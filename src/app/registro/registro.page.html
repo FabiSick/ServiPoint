@@ -1,36 +1,43 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Registro</ion-title>
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="Atrás"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-center">Registro</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
   <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
     <!-- Formulario de registro -->
-    <form id="registerForm" class="w-100" style="max-width: 400px;">
+    <form id="registerForm" class="w-100" style="max-width: 400px;" autocomplete="off">
       <!-- Campo de entrada para el nombre -->
-      <ion-item class="mb-3">
+      <ion-item>
         <ion-label position="floating">Nombre</ion-label>
-        <ion-input type="text" id="name" name="name"></ion-input>
+        <ion-input type="text" id="name" name="name-field" autocomplete="new-name"></ion-input>
       </ion-item>
 
       <!-- Campo de entrada para el correo electrónico -->
-      <ion-item class="mb-3">
+      <ion-item>
         <ion-label position="floating">Correo Electrónico</ion-label>
-        <ion-input type="email" id="email" name="email"></ion-input>
+        <ion-input type="email" id="email" name="email-field" autocomplete="new-email"></ion-input>
       </ion-item>
 
       <!-- Campo de entrada para la contraseña -->
-      <ion-item class="mb-3">
+      <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" id="password" name="password"></ion-input>
+        <ion-input type="password" id="password" name="password-field" autocomplete="new-password"></ion-input>
       </ion-item>
 
-      <ion-item class="mb-3">
+      <ion-item>
         <ion-label position="floating">Numero Celular</ion-label>
-        <ion-input type="number" id="Celular" name="celular"></ion-input>
+        <ion-input type="number" id="Celular" name="celular-field" autocomplete="off"></ion-input>
       </ion-item>
-      <!-- Botón de enviar -->
-      <ion-button expand="full" id="submitBtn">Registrar</ion-button>
+
+       <!-- Botón de Angular Material para Registrar -->
+      <button mat-raised-button color="primary" id="submitBtn" type="submit" class="w-100 mb-2">
+        Registrar
+      </button>
     </form>
   </div>
 </ion-content>

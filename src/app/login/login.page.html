@@ -1,11 +1,12 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-toolbar">
     <ion-title class="text-center">ServiPoint</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+    <h2 class="title">Iniciar Sesión</h2>
     <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="w-100" style="max-width: 400px;">
       <!-- Campo de texto de Angular Material para el nombre de usuario -->
       <mat-form-field appearance="fill" class="w-100 mb-3">

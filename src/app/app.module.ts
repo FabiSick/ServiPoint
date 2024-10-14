@@ -19,6 +19,8 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 // Importar el modulo HTTP
 import { HttpClientModule } from '@angular/common/http';
 
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -32,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     //PERSISTENCIA
     IonicStorageModule.forRoot(),
     //Importar modulo API
-    HttpClientModule  
+    HttpClientModule,
+    FormsModule  
 
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, provideAnimationsAsync()],
