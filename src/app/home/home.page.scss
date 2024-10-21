@@ -3,11 +3,11 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #edf2fa; /* Fondo de color azul claro */
+  background-color: #ecdeff; /* Fondo de color azul claro */
 }
 
 .custom-toolbar {
-  --background: #7800af; /* Fondo azul */
+  --background: #8000ff; /* Fondo azul */
   --color: #ffffff; /* Letras blancas */
   --border-color: transparent; /* Eliminar el borde por defecto */
 }
@@ -21,7 +21,7 @@ ion-title {
 }
 
 ion-content {
-  --background: #d0c5fb; /* Fondo de color azul claro */
+  --background: #ecdeff; /* Fondo de color azul claro */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,7 +40,7 @@ ion-content {
 
 ion-card {
   --background: #ffffff;
-  --color: #7b5bf2; /* Texto oscuro para buen contraste */
+  --color: #8000ff; /* Texto oscuro para buen contraste */
   border-radius: 12px; /* Bordes redondeados */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
   text-align: center; /* Centrar el contenido */
@@ -63,7 +63,7 @@ ion-card-title {
 
 ion-card-content {
   font-size: 1rem; /* Ajuste del tamaño del texto */
-  color: #890aff; /* Color más claro para el contenido */
+  color: #8000ff; /* Color más claro para el contenido */
   margin-top: 5px;
 }
 

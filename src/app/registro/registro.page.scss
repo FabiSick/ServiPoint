@@ -1,5 +1,5 @@
 .custom-toolbar {
-  --background: #007bff; /* Fondo azul */
+  --background: #8000ff; /* Fondo azul */
   --color: #ffffff; /* Letras blancas */
   --border-color: transparent; /* Eliminar el borde por defecto */
 }
@@ -22,7 +22,7 @@ ion-toolbar {
 }
 
 ion-content {
-  --background: #cae6fe; /* Fondo de color azul claro */
+  --background: #f7f1ff; /* Fondo de color azul claro */
   color: #060606; /* Texto en color oscuro para mejor contraste */
   font-size: 1.2rem; /* Ajusta el tamaño base del texto para mejorar la legibilidad */
   display: flex;
@@ -33,7 +33,7 @@ ion-content {
 
 ion-item {
   --highlight-background: transparent;
-  --background: #cae6fe;
+  --background: #ecdeff;
   margin-bottom: 15px;
   color: #060606; /* Texto en color oscuro para mejor contraste */
   font-weight: bold; /* Texto en negrita para mayor visibilidad */
@@ -43,9 +43,9 @@ ion-button,
 button[mat-button] {
   margin-top: 20px;
   width: 100%;
-  --background: #6166ff; /* Color de los botones en azul */
-  --background-activated: #4b55d1; /* Color del botón al presionarlo */
-  --background-focused: #4b55d1;
+  --background: #8000ff; /* Color de los botones en azul */
+  --background-activated: #8000ff; /* Color del botón al presionarlo */
+  --background-focused: #8000ff;
   --border-radius: 12px;
   --color: white;
   font-size: 18px;
@@ -69,14 +69,14 @@ ion-input {
 button[mat-raised-button] {
   font-weight: bold;
   color: #fff;
-  background-color: #007bff;  /* Color de fondo azul brillante */
+  background-color: #8000ff;  /* Color de fondo azul brillante */
   border-radius: 8px;  /* Bordes redondeados */
   width: 100%;  /* Asegura que el botón ocupe el 100% del ancho */
   padding: 12px;  /* Padding para asegurar que el texto esté centrado */
   transition: transform 0.2s ease;
 
   &:hover {
-    background-color: #005bb5;  /* Color de hover */
+    background-color: #6a00ff;  /* Color de hover */
     transform: scale(1.05);  /* Efecto de hover */
   }
 
