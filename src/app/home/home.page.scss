@@ -3,17 +3,17 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f8ff; /* Fondo de color azul claro */
+  background-color: #edf2fa; /* Fondo de color azul claro */
 }
 
 .custom-toolbar {
-  --background: #007bff; /* Fondo azul */
+  --background: #7800af; /* Fondo azul */
   --color: #ffffff; /* Letras blancas */
   --border-color: transparent; /* Eliminar el borde por defecto */
 }
 
 ion-title {
-  font-size: 1.6rem; /* Aumenta un poco más el tamaño del texto */
+  font-size: 2.5rem; /* Aumenta un poco más el tamaño del texto */
   font-weight: bold; /* Texto en negrita */
   text-align: center;
   line-height: 1.5; /* Asegura que la "G" no se corte */
@@ -21,7 +21,7 @@ ion-title {
 }
 
 ion-content {
-  --background: #cae6fe; /* Fondo de color azul claro */
+  --background: #d0c5fb; /* Fondo de color azul claro */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,12 +35,12 @@ ion-content {
   background: white;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(131, 8, 232, 0.1);
 }
 
 ion-card {
   --background: #ffffff;
-  --color: #004085; /* Texto oscuro para buen contraste */
+  --color: #7b5bf2; /* Texto oscuro para buen contraste */
   border-radius: 12px; /* Bordes redondeados */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
   text-align: center; /* Centrar el contenido */
@@ -56,14 +56,14 @@ ion-card {
 
 ion-card-title {
   font-weight: bold;
-  font-size: 1.2rem; /* Tamaño de texto más pequeño para evitar que se corte */
+  font-size: 1rem; /* Tamaño de texto más pequeño para evitar que se corte */
   margin-top: 10px;
   white-space: normal; /* Asegura que el título haga un salto de línea si es necesario */
 }
 
 ion-card-content {
   font-size: 1rem; /* Ajuste del tamaño del texto */
-  color: #555555; /* Color más claro para el contenido */
+  color: #890aff; /* Color más claro para el contenido */
   margin-top: 5px;
 }
 
@@ -76,19 +76,19 @@ img {
 
 /* Estilos para el menú desplegable */
 ion-menu::part(container) {
-  background-color: #007bff !important; /* Cambiamos el fondo del menú a azul brillante con prioridad */
+  background-color: #2b094d !important; /* Cambiamos el fondo del menú a azul brillante con prioridad */
   color: white !important; /* Texto en blanco para mejor contraste */
   border-radius: 0 20px 20px 0;
-  box-shadow: 4px 0px 16px rgba(52, 52, 52, 0.18);
+  box-shadow: 4px 0px 16px rgba(158, 10, 232, 0.18);
 }
 
 ion-menu::part(backdrop) {
-  background-color: rgba(0, 123, 255, 0.5) !important; /* Color translúcido del backdrop */
+  background-color: rgba(81, 0, 255, 0.5) !important; /* Color translúcido del backdrop */
 }
 
 /* Estilos para el menú desplegable */
 ion-menu::part(container) {
-  background-color: #007bff; /* Cambiamos el fondo del menú a azul brillante */
+  background-color: #7b5bf2; /* Cambiamos el fondo del menú a azul brillante */
   color: white; /* Texto en blanco para mejor contraste */
   border-radius: 0 20px 20px 0;
   box-shadow: 4px 0px 16px rgba(52, 52, 52, 0.18);
@@ -100,7 +100,7 @@ ion-menu::part(backdrop) {
 
 /* Opciones dentro del menú */
 .menu-button {
-  background-color: #005bb5 !important; /* Azul más oscuro para los botones dentro del menú */
+  background-color: #7b5bf2 !important; /* Azul más oscuro para los botones dentro del menú */
   color: white !important;
   font-weight: bold;
   padding: 10px;
@@ -127,6 +127,6 @@ ion-menu::part(backdrop) {
 /* Estilo adicional para asegurar que el diseño sea accesible */
 ion-card-content {
   font-size: 1rem; /* Tamaño más grande para mejor visibilidad */
-  color: #333; /* Color oscuro para contraste */
+  color: #2c094d; /* Color oscuro para contraste */
 }
 

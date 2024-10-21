@@ -14,21 +14,30 @@
             <ion-card-title>{{ nombreUsuario }}</ion-card-title> <!-- Muestra el nombre del usuario -->
           </ion-card-header>
           <ion-card-content>
-            <ion-button expand="full" color="primary" (click)="goToAccountSettings()">
-              Actualizar Perfil
+            <ion-button expand="full" color="tertiary" (click)="goToAccountSettings()">
+              Mi perfil
             </ion-button>
         
-            <ion-button expand="full" color="secondary" (click)="goToServiceHistory()">
-              Historial de Actividad
+            <ion-button expand="full" color="tertiary" (click)="goToServiceHistory()">
+              Mis solicitudes
             </ion-button>
         
             <ion-button expand="full" color="tertiary" (click)="goToChangePassword()">
-              Cambiar Contraseña
+              Mi suscripción
             </ion-button>
-        
+            
             <!-- Solo visible si es admin -->
             <ion-item *ngIf="isAdmin" routerLink="/user-management">Gestión de Usuarios</ion-item> 
-        
+            <ion-item *ngIf="isAdmin" routerLink="/user-management">Gestión de Tecnicos</ion-item>
+            <ion-item *ngIf="isAdmin" routerLink="/user-management">Gestión de Servicios</ion-item>
+            <ion-item *ngIf="isAdmin" routerLink="/user-management">Control suscripciones</ion-item>   
+
+
+
+            <ion-button expand="full" color="tertiary" (click)="goToChangePassword()">
+              Configuración
+            </ion-button>
+
             <ion-button expand="full" color="danger" (click)="logout()">
               Cerrar sesión
             </ion-button>
@@ -66,7 +75,7 @@
             <ion-card routerLink="/details" class="selectable-card">
               <img alt="Asistencia Guiada" src="assets/img/Ayuda-Guiada.png" />
               <ion-card-header>
-                <ion-card-title>Ayuda Guiada</ion-card-title>
+                <ion-card-title>Agendar visita</ion-card-title>
               </ion-card-header>
             </ion-card>
           </ion-col>
@@ -88,7 +97,7 @@
             <ion-card routerLink="/details" class="selectable-card">
               <img alt="Asistencia CHAT" src="assets/img/Ayuda-Chat.png" />
               <ion-card-header>
-                <ion-card-title>Ayuda CHAT</ion-card-title>
+                <ion-card-title>CHAT en vivo</ion-card-title>
               </ion-card-header>
             </ion-card>
           </ion-col>
