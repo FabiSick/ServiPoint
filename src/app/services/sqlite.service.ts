@@ -75,4 +75,19 @@ export class SqliteService {
     }
   }
 
+  // Obtener un usuario por nombre de usuario
+  async getUserByUsername(username: string) {
+    if (this.db) {
+      const query = `SELECT * FROM users WHERE username = ?;`;
+      const result = await this.db.query(query, [username]);
+
+      // Verificamos si el resultado y el campo values están definidos
+      if (result && result.values && result.values.length > 0) {
+        return result.values[0];
+      }
+      return null;  // Si no hay resultados, devolvemos null
+    }
+    return null;  // Si no hay conexión a la base de datos
+  }
+
 }

@@ -20,6 +20,9 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
+// Importar Angular Material
+import { MatIconModule } from '@angular/material/icon';  // Asegúrate de importar este módulo
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,7 +38,8 @@ import { FormsModule } from '@angular/forms';
     IonicStorageModule.forRoot(),
     //Importar modulo API
     HttpClientModule,
-    FormsModule  
+    FormsModule,
+    MatIconModule  // Asegúrate de añadirlo aquí
 
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, provideAnimationsAsync()],

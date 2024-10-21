@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';  // Asegúrate de importar el guard aquí
+import { AdminGuard } from './guards/admin.guard';
 
 const routes: Routes = [
   {
@@ -25,6 +26,16 @@ const routes: Routes = [
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },
+  {
+    path: 'user-management',
+    loadChildren: () => import('./user-management/user-management.module').then( m => m.UserManagementPageModule)
+  },
+  {
+    path: 'user-management',
+    loadChildren: () => import('./user-management/user-management.module').then(m => m.UserManagementPageModule),
+    canActivate: [AdminGuard]  // Solo los administradores pueden acceder a esta ruta
+  }
+
 ];
 
 @NgModule({

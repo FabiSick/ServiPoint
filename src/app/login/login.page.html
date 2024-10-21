@@ -17,9 +17,13 @@
       <!-- Campo de texto de Angular Material para la contraseña -->
       <mat-form-field appearance="fill" class="w-100 mb-3">
         <mat-label>Contraseña</mat-label>
-        <input matInput type="password" required [(ngModel)]="password" name="password" #passwordInput="ngModel"
-          [pattern]="passwordPattern">
-      </mat-form-field>
+        <input matInput [type]="hide ? 'password' : 'text'" required [(ngModel)]="password" name="password" #passwordInput="ngModel" [pattern]="passwordPattern">
+        
+        <button mat-icon-button matSuffix (click)="togglePasswordVisibility($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>     
+         
 
       <!-- Mensaje de error de contraseña -->
       <ion-text color="danger" *ngIf="passwordInput.invalid && passwordInput.touched" class="mb-3">

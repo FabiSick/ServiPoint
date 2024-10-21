@@ -36,6 +36,11 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
 
+/* En styles.css o styles.scss */
+@import '@angular/material/prebuilt-themes/indigo-pink.css'; /* Puedes elegir otro tema si prefieres */
+@import '~@angular/material/prebuilt-themes/azure-blue.css';
+
+
 /* Fondo claro para la aplicación */
 body {
     background-color: #f0f8ff; /* Azul claro */

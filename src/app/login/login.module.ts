@@ -11,6 +11,9 @@ import { LoginPage } from './login.page';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+// Importar MatIconModule de Angular Material
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   imports: [
@@ -20,7 +23,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     LoginPageRoutingModule,
     MatButtonModule,
     MatInputModule,
-    MatFormFieldModule // Asegúrate de importar estos módulos
+    MatFormFieldModule, // Asegúrate de importar estos módulos
+    MatIconModule  // Asegúrate de que esté importado aquí también
   ],
   declarations: [LoginPage]
 })

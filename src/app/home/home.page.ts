@@ -11,7 +11,11 @@ export class HomePage implements OnInit {
 
   nombreUsuario: string = ''; // Declarar la propiedad para almacenar el nombre de usuario
   
-  constructor(private route: ActivatedRoute, private router: Router,private storage: Storage) {}
+  isAdmin: boolean = false;
+
+  constructor(private route: ActivatedRoute, private router: Router,private storage: Storage) {
+    this.checkAdminRole();
+  }
 
   async  ngOnInit() {
     // Obtener el parámetro de nombre de usuario de los query params
@@ -28,6 +32,14 @@ export class HomePage implements OnInit {
         }
       }
     });
+  }
+
+  // Función para verificar el rol del usuario
+  async checkAdminRole() {
+    const userRole = await this.storage.get('role');  // Obtén el rol almacenado
+    if (userRole === 'admin') {
+      this.isAdmin = true;  // Si el rol es "admin", activa isAdmin
+    }
   }
 
   // Método para ir al perfil
