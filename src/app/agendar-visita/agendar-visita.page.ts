@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
-import { GoogleMaps, GoogleMap, GoogleMapsEvent, Marker, GoogleMapsAnimation, MyLocation } from '@ionic-native/google-maps';
+import { GoogleMaps, GoogleMap, GoogleMapsEvent, Marker, GoogleMapsAnimation } from '@ionic-native/google-maps';
 import { Platform } from '@ionic/angular';
 
 @Component({
@@ -29,7 +29,7 @@ export class AgendarVisitaPage implements OnInit {
     '4:00 PM - 5:00 PM'
   ];
 
-  constructor(private router: Router, private storage: Storage,private platform: Platform) { }
+  constructor(private router: Router, private storage: Storage, private platform: Platform) { }
 
   async ngOnInit() {
     await this.platform.ready();
@@ -40,12 +40,13 @@ export class AgendarVisitaPage implements OnInit {
   loadMap() {
     this.map = GoogleMaps.create('map_canvas', {
       camera: {
-        target: { lat: -33.4489, lng: -70.6693 }, // Por ejemplo, Santiago, Chile
+        target: { lat: -33.4489, lng: -70.6693 }, // Santiago, Chile (ejemplo)
         zoom: 14,
         tilt: 30
       }
     });
 
+    // Evento para capturar el click en el mapa
     this.map.on(GoogleMapsEvent.MAP_CLICK).subscribe((event) => {
       this.addMarker(event[0].lat, event[0].lng);
     });
@@ -58,11 +59,11 @@ export class AgendarVisitaPage implements OnInit {
       animation: GoogleMapsAnimation.BOUNCE
     });
 
-    // Aquí podrías usar un servicio de Google Places para obtener la dirección
-    // Simulamos la asignación directa de una dirección para la demostración
+    // Aquí podrías usar un servicio de Google Places para obtener la dirección.
     this.selectedAddress = `Lat: ${lat}, Lng: ${lng}`;
   }
 
+  // Método para agendar la visita
   scheduleVisit() {
     if (this.selectedAddress) {
       console.log('Visit scheduled at: ', this.selectedAddress);
@@ -75,7 +76,6 @@ export class AgendarVisitaPage implements OnInit {
   // Método que se ejecuta al enviar el formulario
   async onSubmit() {
     if (this.selectedDate && this.selectedTime && this.userAddress) {
-      // Guardar la información de la visita
       const visitDetails = {
         date: this.selectedDate,
         time: this.selectedTime,
@@ -90,5 +90,5 @@ export class AgendarVisitaPage implements OnInit {
       alert('Por favor, completa todos los campos.');
     }
   }
-  
+
 }
