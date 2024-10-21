@@ -41,8 +41,8 @@ ion-content {
 ion-card {
   --background: #ffffff;
   --color: #8000ff; /* Texto oscuro para buen contraste */
-  border-radius: 12px; /* Bordes redondeados */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.494); /* Sombra ligera */
   text-align: center; /* Centrar el contenido */
   padding: 10px; /* Espaciado interno */
   transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transición suave */
@@ -55,6 +55,7 @@ ion-card {
 }
 
 ion-card-title {
+  --color: #7d04ff;
   font-weight: bold;
   font-size: 1rem; /* Tamaño de texto más pequeño para evitar que se corte */
   margin-top: 10px;
@@ -111,7 +112,7 @@ ion-menu::part(backdrop) {
 }
 
 .menu-button:hover {
-  background-color: #004080; /* Azul más oscuro al hacer hover */
+  background-color: #8000ff; /* Azul más oscuro al hacer hover */
 }
 
 /* Estilo para el botón de cerrar sesión */
