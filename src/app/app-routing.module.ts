@@ -34,7 +34,23 @@ const routes: Routes = [
     path: 'user-management',
     loadChildren: () => import('./user-management/user-management.module').then(m => m.UserManagementPageModule),
     canActivate: [AdminGuard]  // Solo los administradores pueden acceder a esta ruta
+  },  {
+    path: 'agendar-visita',
+    loadChildren: () => import('./agendar-visita/agendar-visita.module').then( m => m.AgendarVisitaPageModule)
+  },
+  {
+    path: 'soporte-remoto',
+    loadChildren: () => import('./soporte-remoto/soporte-remoto.module').then( m => m.SoporteRemotoPageModule)
+  },
+  {
+    path: 'chat-en-vivo',
+    loadChildren: () => import('./chat-en-vivo/chat-en-vivo.module').then( m => m.ChatEnVivoPageModule)
+  },
+  {
+    path: 'soporte-telefonico',
+    loadChildren: () => import('./soporte-telefonico/soporte-telefonico.module').then( m => m.SoporteTelefonicoPageModule)
   }
+
 
 ];
 

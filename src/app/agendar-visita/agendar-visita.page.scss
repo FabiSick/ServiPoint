@@ -1,0 +1,104 @@
+.custom-toolbar {
+    --background: #8000ff; /* Fondo azul */
+    --color: #ffffff; /* Letras blancas */
+    --border-color: transparent; /* Eliminar el borde por defecto */
+  }
+  
+  ion-title {
+    font-size: 1.6rem; /* Aumenta un poco más el tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    text-align: center;
+    line-height: 1.5; /* Asegura que la "G" no se corte */
+    letter-spacing: 0.5px; /* Aumenta el espacio entre las letras */
+  }
+  
+  ion-back-button {
+    --color: #ffffff; /* Color blanco para el texto del botón */
+    font-weight: bold; /* Negrita para el botón de retroceso */
+  }
+  
+  ion-toolbar {
+    padding: 10px; /* Añadir espacio extra para mejorar legibilidad */
+  }
+  
+  ion-content {
+    --background: #f7f1ff; /* Fondo de color azul claro */
+    color: #060606; /* Texto en color oscuro para mejor contraste */
+    font-size: 1.2rem; /* Ajusta el tamaño base del texto para mejorar la legibilidad */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  ion-item {
+    --highlight-background: transparent;
+    --background: #ecdeff;
+    margin-bottom: 15px;
+    color: #060606; /* Texto en color oscuro para mejor contraste */
+    font-weight: bold; /* Texto en negrita para mayor visibilidad */
+  }
+  
+  ion-button,
+  button[mat-button] {
+    margin-top: 20px;
+    width: 100%;
+    --background: #8000ff; /* Color de los botones en azul */
+    --background-activated: #8000ff; /* Color del botón al presionarlo */
+    --background-focused: #8000ff;
+    --border-radius: 12px;
+    --color: white;
+    font-size: 18px;
+    font-weight: bold; /* Texto en negrita en el botón */
+  }
+  
+  ion-label {
+    font-size: 1rem; /* Ajuste del tamaño de la etiqueta */
+  }
+  
+  input {
+    font-weight: bold; /* Aseguramos que el texto autocompletado se vea bien */
+    color: #060606;
+  }
+  
+  ion-input {
+    --color: #060606;
+    --padding-start: 10px;
+  }
+  
+  button[mat-raised-button] {
+    font-weight: bold;
+    color: #fff;
+    background-color: #8000ff;  /* Color de fondo azul brillante */
+    border-radius: 8px;  /* Bordes redondeados */
+    width: 100%;  /* Asegura que el botón ocupe el 100% del ancho */
+    padding: 12px;  /* Padding para asegurar que el texto esté centrado */
+    transition: transform 0.2s ease;
+  
+    &:hover {
+      background-color: #6a00ff;  /* Color de hover */
+      transform: scale(1.05);  /* Efecto de hover */
+    }
+  
+    &:disabled {
+      background-color: #cccccc;  /* Color de botón deshabilitado */
+      cursor: not-allowed;
+    }
+}
+
+ion-datetime {
+    --background: #e0f7fa; /* Fondo azul claro */
+    --color: #000000; /* Texto en color negro */
+    --color-selected: #000000; /* Texto seleccionado en negro */
+    --highlight-background: #ffffff; /* Fondo del día seleccionado en blanco */
+    --highlight-color: #007bff; /* Color del día seleccionado */
+    --border-radius: 10px; /* Bordes redondeados */
+  }
+  
+  ion-picker {
+    --background: #f0f8ff; /* Fondo más claro */
+    --button-color: #000000; /* Color del texto en los botones */
+    --button-background: #e0f7fa; /* Fondo de los botones */
+  }
+  
+  
