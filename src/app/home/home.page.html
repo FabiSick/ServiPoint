@@ -14,27 +14,27 @@
             <ion-card-title>{{ nombreUsuario }}</ion-card-title> <!-- Muestra el nombre del usuario -->
           </ion-card-header>
           <ion-card-content>
-            <ion-button expand="full" color="tertiary" (click)="goToAccountSettings()">
+            <ion-button expand="full" color="tertiary" (click)="goToProfile()">
               Mi perfil
             </ion-button>
         
-            <ion-button expand="full" color="tertiary" (click)="goToServiceHistory()">
+            <ion-button expand="full" color="tertiary" (click)="goToSolicitudes()">
               Mis solicitudes
             </ion-button>
         
-            <ion-button expand="full" color="tertiary" (click)="goToChangePassword()">
+            <ion-button expand="full" color="tertiary" (click)="goToSuscripciones()">
               Mi suscripción
             </ion-button>
             
             <!-- Solo visible si es admin -->
             <ion-item *ngIf="isAdmin" routerLink="/user-management">Gestión de Usuarios</ion-item> 
-            <ion-item *ngIf="isAdmin" routerLink="/user-management">Gestión de Tecnicos</ion-item>
-            <ion-item *ngIf="isAdmin" routerLink="/user-management">Gestión de Servicios</ion-item>
-            <ion-item *ngIf="isAdmin" routerLink="/user-management">Control suscripciones</ion-item>   
+            <ion-item *ngIf="isAdmin" routerLink="/">Gestión de Tecnicos</ion-item>
+            <ion-item *ngIf="isAdmin" routerLink="/">Gestión de Servicios</ion-item>
+            <ion-item *ngIf="isAdmin" routerLink="/">Control suscripciones</ion-item>   
 
 
 
-            <ion-button expand="full" color="tertiary" (click)="goToChangePassword()">
+            <ion-button expand="full" color="tertiary" (click)="goToConfiguracion()">
               Configuración
             </ion-button>
 

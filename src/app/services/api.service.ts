@@ -21,6 +21,7 @@ export class ApiService {
     return this.http.get(this.apiUrl);
   }
 
+  //LOGIN
   // Obtener un usuario específico por nombre de usuario
   getUserByUsername(username: string): Observable<any> {
     return this.http.get(`${this.apiUrl}?username=${username}`);

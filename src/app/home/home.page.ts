@@ -44,20 +44,22 @@ export class HomePage implements OnInit {
 
   // Método para ir al perfil
   goToProfile() {
-    this.router.navigate(['/profile']);
-  }
-  // Método para ir a la configuración de la cuenta
-  goToAccountSettings() {
-    this.router.navigate(['/account-settings']);
+    this.router.navigate(['/perfil']);
   }
 
   // Método para ir al historial de servicios
-  goToServiceHistory() {
-    this.router.navigate(['/service-history']);
+  goToSolicitudes() {
+    this.router.navigate(['/solicitudes']);
   }
-  goToChangePassword() {
-    this.router.navigate(['/change-password']);
+
+  goToSuscripciones() {
+    this.router.navigate(['/suscripciones']);
   }
+  
+  goToConfiguracion() {
+    this.router.navigate(['/configuracion']);
+  }
+
   // Método para cerrar session por medio de Persistencia/Storage
   async logout() {
     await this.storage.remove('nombre_usuario');

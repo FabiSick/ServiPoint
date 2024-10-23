@@ -22,7 +22,23 @@ const routes: Routes = [
   {
     path: 'soporte-telefonico',
     loadChildren: () => import('../soporte-telefonico/soporte-telefonico.module').then(m => m.SoporteTelefonicoPageModule)
-  }
+  },
+  {
+    path: 'configuracion',
+    loadChildren: () => import('../configuracion/configuracion.module').then(m => m.ConfiguracionPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('../perfil/perfil.module').then(m => m.PerfilPageModule)
+  },
+  {
+    path: 'solicitudes',
+    loadChildren: () => import('../solicitudes/solicitudes.module').then(m => m.SolicitudesPageModule)
+  },
+  {
+    path: 'suscripciones',
+    loadChildren: () => import('../suscripciones/suscripciones.module').then(m => m.SuscripcionesPageModule)
+  },
 ];
 
 @NgModule({
