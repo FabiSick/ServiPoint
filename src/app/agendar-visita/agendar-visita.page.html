@@ -12,6 +12,7 @@
     
     <!-- Formulario de agendar visita -->
     <form id="visitForm" class="w-100" style="max-width: 400px;" (ngSubmit)="onSubmit()" autocomplete="off">
+     
       <!-- Selección de fecha sin hora -->
       <ion-item>
         <ion-label>Fecha</ion-label>
@@ -40,7 +41,7 @@
       </ion-item>
 
       <!-- Aquí es donde el mapa se renderizará -->
-      <div #map id="map_canvas" style="width: 100%; height: 300px;"></div>
+      <!--<div #map id="map_canvas" style="width: 100%; height: 300px;"></div>
 
       <!-- Dirección seleccionada (rellenada automáticamente desde el mapa) -->
       <ion-item>
