@@ -1,6 +1,7 @@
 import { Component, OnInit  } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
+import { Browser } from '@capacitor/browser'; 
 
 @Component({
   selector: 'app-home',
@@ -64,6 +65,10 @@ export class HomePage implements OnInit {
   async logout() {
     await this.storage.remove('nombre_usuario');
     this.router.navigate(['/login']);
+  }
+   // Función para hacer una llamada telefónica
+   async makeCall() {
+    await Browser.open({ url: 'tel:123456789' });  // Reemplaza con el número que desees
   }
   
 }
