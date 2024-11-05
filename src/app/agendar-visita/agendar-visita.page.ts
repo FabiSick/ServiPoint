@@ -1,7 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
-import { GoogleMaps, GoogleMap, GoogleMapsEvent, Marker, GoogleMapsAnimation } from '@ionic-native/google-maps';
+import { GoogleMap, Marker } from '@capacitor/google-maps';
+import { Geolocation } from '@capacitor/geolocation';
 import { Platform } from '@ionic/angular';
 
 @Component({
@@ -33,34 +34,56 @@ export class AgendarVisitaPage implements OnInit {
 
   async ngOnInit() {
     await this.platform.ready();
-    this.loadMap();
+    await this.loadMap();
   }
 
   // Cargar el mapa
-  loadMap() {
-    this.map = GoogleMaps.create('map_canvas', {
-      camera: {
-        target: { lat: -33.4489, lng: -70.6693 }, // Santiago, Chile (ejemplo)
-        zoom: 14,
-        tilt: 30
-      }
-    });
+  async loadMap() {
+    try {
+      this.map = await GoogleMap.create({
+        id: 'map_canvas', // Unique id for the map
+        element: this.mapElement.nativeElement, // Reference to the map container
+        apiKey: 'YOUR_GOOGLE_MAPS_API_KEY', // Reemplaza con tu Google Maps API key
+        config: {
+          center: {
+            lat: -33.4489,
+            lng: -70.6693 // Santiago, Chile (ejemplo)
+          },
+          zoom: 14,
+        },
+      });
 
-    // Evento para capturar el click en el mapa
-    this.map.on(GoogleMapsEvent.MAP_CLICK).subscribe((event) => {
-      this.addMarker(event[0].lat, event[0].lng);
-    });
+      // Evento para capturar el click en el mapa
+      this.map.setOnMapClickListener(async (event) => {
+        if (event.latitude && event.longitude) {
+          const lat = event.latitude;
+          const lng = event.longitude;
+          await this.addMarker(lat, lng);
+        }
+      });
+    } catch (error) {
+      console.error('Error cargando el mapa:', error);
+    }
   }
 
   // Añadir marcador y obtener la dirección
-  addMarker(lat: number, lng: number) {
-    const marker: Marker = this.map.addMarkerSync({
-      position: { lat, lng },
-      animation: GoogleMapsAnimation.BOUNCE
-    });
+  async addMarker(lat: number, lng: number) {
+    const marker: Marker = {
+      coordinate: {
+        lat,
+        lng
+      },
+      title: "Ubicación seleccionada",
+      snippet: `Lat: ${lat}, Lng: ${lng}`
+    };
 
-    // Aquí podrías usar un servicio de Google Places para obtener la dirección.
-    this.selectedAddress = `Lat: ${lat}, Lng: ${lng}`;
+    try {
+      await this.map.addMarker(marker);
+      // Aquí podrías usar un servicio de Google Places para obtener la dirección.
+      this.selectedAddress = `Lat: ${lat}, Lng: ${lng}`;
+    } catch (error) {
+      console.error('Error al añadir marcador:', error);
+    }
   }
 
   // Método para agendar la visita
@@ -90,5 +113,4 @@ export class AgendarVisitaPage implements OnInit {
       alert('Por favor, completa todos los campos.');
     }
   }
-
 }

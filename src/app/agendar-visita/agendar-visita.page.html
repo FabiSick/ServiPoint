@@ -8,13 +8,12 @@
 </ion-header>
 
 <ion-content>
-  <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
-    
+  <div class="container">
     <!-- Formulario de agendar visita -->
-    <form id="visitForm" class="w-100" style="max-width: 400px;" (ngSubmit)="onSubmit()" autocomplete="off">
+    <form id="visitForm" (ngSubmit)="onSubmit()" autocomplete="off">
       <!-- Selección de fecha sin hora -->
       <ion-item>
-        <ion-label>Fecha</ion-label>
+        <ion-label position="floating">Fecha</ion-label>
         <ion-datetime
           displayFormat="DD/MM/YYYY"
           pickerFormat="DD MMMM YYYY"
@@ -26,7 +25,7 @@
         </ion-datetime>
       </ion-item>
 
-      <!-- Selección de horario de la visita -->
+      <!-- Selección de hora -->
       <ion-item>
         <ion-label position="floating">Hora</ion-label>
         <ion-select [(ngModel)]="selectedTime" name="selectedTime" placeholder="Selecciona un horario">
@@ -39,17 +38,17 @@
         <ion-label>Ubicación</ion-label>
       </ion-item>
 
-      <!-- Aquí es donde el mapa se renderizará -->
+      <!-- Mapa para seleccionar ubicación -->
       <div #map id="map_canvas" style="width: 100%; height: 300px;"></div>
 
-      <!-- Dirección seleccionada (rellenada automáticamente desde el mapa) -->
+      <!-- Dirección seleccionada -->
       <ion-item>
         <ion-label position="floating">Dirección</ion-label>
         <ion-input [(ngModel)]="selectedAddress" name="address" placeholder="Selecciona una ubicación en el mapa" readonly></ion-input>
       </ion-item>
 
-      <!-- Botón para agendar visita -->
-      <ion-button expand="full" type="submit" color="tertiary" class="w-100 mt-4">Agendar Visita</ion-button>
+      <!-- Botón para agendar la visita -->
+      <ion-button expand="block" type="submit" class="schedule-button">Agendar Visita</ion-button>
     </form>
   </div>
 </ion-content>

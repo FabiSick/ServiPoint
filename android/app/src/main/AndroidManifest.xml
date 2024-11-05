@@ -17,7 +17,7 @@
 
         <!-- Clave API de Google Maps -->
         <meta-data
-            android:name="com.google.android.geo.API_KEY"
+            android:name="com.google.android.geo.AIzaSyBvY0-gft1SZhRgRfEuN_NdAEk9yv-3A2o"
             android:value="AIzaSyBvY0-gft1SZhRgRfEuN_NdAEk9yv-3A2o" /> <!-- Reemplaza TU_API_KEY con tu clave real -->
 
         <activity
