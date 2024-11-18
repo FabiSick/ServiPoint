@@ -65,7 +65,7 @@ export class RegistroPage implements AfterViewInit {
         alert('La contraseña debe contener al menos 4 dígitos, 3 caracteres especiales y 1 letra mayúscula.');
         isValid = false;
       }
-
+/////////////////////////////////////////////////////////////////////////////////////
       // Si todas las validaciones son correctas
       if (isValid) {
         // Enviamos los datos a la API para registrar el usuario
@@ -76,6 +76,7 @@ export class RegistroPage implements AfterViewInit {
           role: role
         };
 
+/////////////////////////////////////////////////////////////////////////////////////
         // Llamamos al servicio ApiService para registrar el usuario
         this.apiService.registerUser(newUser).subscribe(async response => {
           alert('Usuario registrado exitosamente.');

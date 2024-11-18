@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: UserManagementPage
+  },
+  {
+    path: 'editar-usuario',
+    loadChildren: () => import('../editar-usuario/editar-usuario.module').then(m => m.EditarUsuarioPageModule)
   }
 ];
 

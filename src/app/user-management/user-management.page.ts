@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';  // Importamos el servicio de la API
+import { Router } from '@angular/router';  // Importar el Router
 
 @Component({
   selector: 'app-user-management',
@@ -9,7 +10,7 @@ import { ApiService } from '../services/api.service';  // Importamos el servicio
 export class UserManagementPage implements OnInit {
   users: any[] = [];  // Arreglo para almacenar la lista de usuarios
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit() {
     this.getUsers();  // Obtener la lista de usuarios al inicializar la página
@@ -27,10 +28,11 @@ export class UserManagementPage implements OnInit {
     );
   }
 
-  // Editar un usuario (puedes redirigir a otra página para editar)
+  // Editar un usuario (redirigir a la página de edición)
   editUser(user: any) {
     console.log('Editar usuario:', user);
-    // Aquí puedes redirigir a una página de edición con los detalles del usuario o mostrar un formulario
+    // Redirigir a la página de edición pasando el ID del usuario como parámetro
+    this.router.navigate(['/editar-usuario'], { queryParams: { id: user.id } });
   }
 
   // Eliminar un usuario por ID

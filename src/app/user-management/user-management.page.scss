@@ -152,3 +152,12 @@ ion-datetime {
     color: #8000ff !important; /* Color del botón de mes */
     
   }
+  ion-item {
+    --background: #f5f5f5; /* Fondo gris claro */
+    --highlight-background: #e0e0e0; /* Fondo destacado al seleccionar */
+    --color: #000000; /* Texto en negro */
+    --background-activated: #bdbdbd; /* Fondo cuando se presiona */
+    --background-focused: #e0e0e0; /* Fondo cuando se enfoca */
+  }
+  
+  
