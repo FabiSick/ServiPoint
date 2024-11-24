@@ -43,7 +43,7 @@ export class AgendarVisitaPage implements OnInit {
       this.map = await GoogleMap.create({
         id: 'map_canvas', // Unique id for the map
         element: this.mapElement.nativeElement, // Reference to the map container
-        apiKey: 'YOUR_GOOGLE_MAPS_API_KEY', // Reemplaza con tu Google Maps API key
+        apiKey: 'AIzaSyBHHC_AzV2XjU-thLST2JHEB7Lgl6o72sk', // Reemplaza con tu Google Maps API key
         config: {
           center: {
             lat: -33.4489,

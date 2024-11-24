@@ -5,6 +5,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />    
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:usesCleartextTraffic="true"
@@ -17,8 +20,8 @@
 
         <!-- Clave API de Google Maps -->
         <meta-data
-            android:name="com.google.android.geo.AIzaSyBvY0-gft1SZhRgRfEuN_NdAEk9yv-3A2o"
-            android:value="AIzaSyBvY0-gft1SZhRgRfEuN_NdAEk9yv-3A2o" /> <!-- Reemplaza TU_API_KEY con tu clave real -->
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBHHC_AzV2XjU-thLST2JHEB7Lgl6o72sk" /> <!-- Reemplaza TU_API_KEY con tu clave real -->
 
         <activity
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
