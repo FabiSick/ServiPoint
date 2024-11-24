@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Platform } from '@ionic/angular';
 
 @Component({
@@ -8,37 +7,36 @@ import { Platform } from '@ionic/angular';
   styleUrls: ['./soporte-remoto.page.scss'],
 })
 export class SoporteRemotoPage implements OnInit {
+  
+  @ViewChild('videoElement', { static: false }) videoElement!: ElementRef<HTMLVideoElement>;
+  stream: MediaStream | null = null;
 
-  constructor(private platform: Platform) { }
+  constructor(private platform: Platform) {}
 
-  async ngOnInit() {
-    // Verifica que la plataforma esté lista antes de iniciar la cámara
-    if (this.platform.is('capacitor')) {
-      await this.startCamera();
-    }
+  ngOnInit() {
+    this.startCamera();
   }
 
-  // Inicia la cámara
   async startCamera() {
-    // Solicita el permiso de cámara
-    const status = await BarcodeScanner.checkPermission({ force: true });
-    if (status.granted) {
-      // Oculta la webview para que la cámara esté en la vista
-      BarcodeScanner.hideBackground();
-      await BarcodeScanner.startScan({ targetedFormats: [] });
-    } else {
-      console.error('Permiso de cámara denegado');
+    try {
+      // Solicita acceso a la cámara frontal
+      this.stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: 'user' } // 'user' para cámara frontal
+      });
+
+      // Conecta el flujo de la cámara al elemento de video
+      if (this.videoElement && this.videoElement.nativeElement) {
+        this.videoElement.nativeElement.srcObject = this.stream;
+      }
+    } catch (error) {
+      console.error('Error al acceder a la cámara: ', error);
     }
   }
 
-  // Para la cámara
   stopCamera() {
-    BarcodeScanner.stopScan();
+    if (this.stream) {
+      this.stream.getTracks().forEach((track) => track.stop());
+      this.stream = null;
+    }
   }
 }
-
-
-
- 
-
-

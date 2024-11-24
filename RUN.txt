@@ -1,0 +1,9 @@
+ionic build
+npx cap sync
+json-server --watch db.json --port 3000
+ionic capacitor open android  
+adb devices 
+adb reverse tcp:3000 tcp:3000  
+
+"username": "admin"
+"password": "Spoint1234..."

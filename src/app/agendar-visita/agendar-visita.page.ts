@@ -15,11 +15,10 @@ export class AgendarVisitaPage implements OnInit {
   @ViewChild('map', { static: false }) mapElement!: ElementRef;
   map!: GoogleMap;
   selectedAddress: string = '';
-  selectedDate: string = '';   // Variable para almacenar la fecha seleccionada
-  selectedTime: string = '';   // Variable para almacenar el horario seleccionado
-  userAddress: string = '';    // Variable para almacenar la dirección del usuario
+  selectedDate: string = '';   
+  selectedTime: string = '';   
+  userAddress: string = '';    
 
-  // Horarios disponibles
   availableTimes: string[] = [
     '9:00 AM - 10:00 AM',
     '10:00 AM - 11:00 AM',
@@ -34,39 +33,52 @@ export class AgendarVisitaPage implements OnInit {
 
   async ngOnInit() {
     await this.platform.ready();
+    await this.getCurrentPosition(); // Asegúrate de tener los permisos
     await this.loadMap();
   }
 
-  // Cargar el mapa
   async loadMap() {
     try {
+      // Espera hasta que el elemento mapElement esté disponible
+      if (!this.mapElement || !this.mapElement.nativeElement) {
+        console.error('Contenedor del mapa no disponible');
+        return;
+      }
+
       this.map = await GoogleMap.create({
-        id: 'map_canvas', // Unique id for the map
-        element: this.mapElement.nativeElement, // Reference to the map container
-        apiKey: 'AIzaSyBHHC_AzV2XjU-thLST2JHEB7Lgl6o72sk', // Reemplaza con tu Google Maps API key
+        id: 'map_canvas',
+        element: this.mapElement.nativeElement,
+        apiKey: 'AIzaSyBvY0-gft1SZhRgRfEuN_NdAEk9yv-3A2o', // Reemplaza con tu Google Maps API key
         config: {
           center: {
-            lat: -33.4489,
-            lng: -70.6693 // Santiago, Chile (ejemplo)
+            lat: -33.4489, 
+            lng: -70.6693 
           },
           zoom: 14,
         },
       });
 
-      // Evento para capturar el click en el mapa
+      // Configurar el evento click en el mapa
       this.map.setOnMapClickListener(async (event) => {
         if (event.latitude && event.longitude) {
-          const lat = event.latitude;
-          const lng = event.longitude;
-          await this.addMarker(lat, lng);
+          await this.addMarker(event.latitude, event.longitude);
         }
       });
     } catch (error) {
-      console.error('Error cargando el mapa:', error);
+      console.error('Error al cargar el mapa:', error);
     }
   }
 
-  // Añadir marcador y obtener la dirección
+  async getCurrentPosition() {
+    const permission = await Geolocation.requestPermissions();
+    if (permission.location === 'granted') {
+      const coordinates = await Geolocation.getCurrentPosition();
+      console.log('Current position:', coordinates);
+    } else {
+      console.error('Permiso de ubicación no concedido');
+    }
+  }
+  
   async addMarker(lat: number, lng: number) {
     const marker: Marker = {
       coordinate: {
@@ -79,14 +91,12 @@ export class AgendarVisitaPage implements OnInit {
 
     try {
       await this.map.addMarker(marker);
-      // Aquí podrías usar un servicio de Google Places para obtener la dirección.
       this.selectedAddress = `Lat: ${lat}, Lng: ${lng}`;
     } catch (error) {
       console.error('Error al añadir marcador:', error);
     }
   }
 
-  // Método para agendar la visita
   scheduleVisit() {
     if (this.selectedAddress) {
       console.log('Visit scheduled at: ', this.selectedAddress);
@@ -96,7 +106,6 @@ export class AgendarVisitaPage implements OnInit {
     }
   }
 
-  // Método que se ejecuta al enviar el formulario
   async onSubmit() {
     if (this.selectedDate && this.selectedTime && this.userAddress) {
       const visitDetails = {
@@ -105,8 +114,6 @@ export class AgendarVisitaPage implements OnInit {
         address: this.userAddress
       };
       console.log('Visita agendada:', visitDetails);
-      
-      // Mostrar mensaje de éxito y redirigir a la página principal
       alert('Visita agendada exitosamente!');
       this.router.navigate(['/home']);
     } else {
