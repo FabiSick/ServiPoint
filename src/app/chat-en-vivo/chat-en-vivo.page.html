@@ -9,8 +9,17 @@
 
 <ion-content>
   <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
-    
-   
-    
+    <ion-card class="chat-card">
+      <ion-card-header>
+        <ion-card-title>Comunícate con nosotros por WhatsApp</ion-card-title>
+      </ion-card-header>
+  
+      <ion-card-content>
+        <ion-button expand="block" (click)="abrirWhatsApp()" color="success" class="whatsapp-button">
+          <ion-icon slot="start" name="logo-whatsapp"></ion-icon> Abrir WhatsApp
+        </ion-button>
+      </ion-card-content>
+    </ion-card> 
+  
   </div>
 </ion-content>

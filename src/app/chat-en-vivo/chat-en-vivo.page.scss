@@ -1,154 +1,94 @@
+/* Encabezado de la página */
 .custom-toolbar {
-    --background: #8000ff; /* Fondo azul */
-    --color: #fefefe; /* Letras blancas */
-    --border-color: transparent; /* Eliminar el borde por defecto */
-  }
-  
-  ion-title {
-    font-size: 1.6rem; /* Aumenta un poco más el tamaño del texto */
-    font-weight: bold; /* Texto en negrita */
-    text-align: center;
-    line-height: 1.5; /* Asegura que la "G" no se corte */
-    letter-spacing: 0.5px; /* Aumenta el espacio entre las letras */
-  }
-  
-  ion-back-button {
-    --color: #ffffff; /* Color blanco para el texto del botón */
-    font-weight: bold; /* Negrita para el botón de retroceso */
-  }
-  
-  ion-toolbar {
-    padding: 10px; /* Añadir espacio extra para mejorar legibilidad */
-  }
-  
-  ion-content {
-    --background: #f7f1ff; /* Fondo de color azul claro */
-    --title--color: #8000ff;
-    color: #060606; /* Texto en color oscuro para mejor contraste */
-    font-size: 1.2rem; /* Ajusta el tamaño base del texto para mejorar la legibilidad */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  ion-item {
-    --color: #000001;
-    --highlight-background: #dac0ff;
-    --background: #e4d0ff;
-    --background-activated: #8000ff; /* Color del botón al presionarlo */
-    --background-focused: #e4d0ff;
-    margin-bottom: 15px;
-    color: #060606; /* Texto en color oscuro para mejor contraste */
-    font-weight: bold; /* Texto en negrita para mayor visibilidad */
-  }
-  
-  ion-button,
-  button[mat-button] {
-    margin-top: 20px;
-    width: 100%;
-    --background: #e4d0ff; /* Color de los botones en azul */
-    --background-activated: #8000ff; /* Color del botón al presionarlo */
-    --background-focused: #8000ff;
-    --border-radius: 12px;
-    --color: rgb(0, 0, 0);
-    font-size: 18px;
-    font-weight: bold; /* Texto en negrita en el botón */
-  }
-  
-  ion-button {
-    margin-top: 20px;
-    width: 100%;
-    --background: #c79eff; /* Color de los botones en azul */
-    --background-activated: #8000ff; /* Color del botón al presionarlo */
-    --background-focused: #e4d0ff;
-    --border-radius: 12px;
-    --color: rgb(2, 2, 2);
-    font-size: 18px;
-    font-weight: bold; /* Texto en negrita en el botón */
-  }
-
-  ion-label {
-    font-size: 2rem; /* Ajuste del tamaño de la etiqueta */
-  }
-  
-  input {
-    font-weight: bold; /* Aseguramos que el texto autocompletado se vea bien */
-    color: #060606;
-  }
-  
-  ion-input {
-    --color: #060606;
-    --padding-start: 10px;
-  }
-  
-  button[mat-raised-button] {
-    font-weight: bold;
-    color: #000000;
-    background-color: #8000ff;  /* Color de fondo azul brillante */
-    border-radius: 8px;  /* Bordes redondeados */
-    width: 100%;  /* Asegura que el botón ocupe el 100% del ancho */
-    padding: 12px;  /* Padding para asegurar que el texto esté centrado */
-    transition: transform 0.2s ease;
-  
-    &:hover {
-      background-color: #8000ff;  /* Color de hover */
-      transform: scale(1.05);  /* Efecto de hover */
-    }
-  
-    &:disabled {
-      background-color: #000000;  /* Color de botón deshabilitado */
-      cursor: not-allowed;
-    }
+  --background: #02d4c6; /* Fondo del toolbar */
+  --color: #000000; /* Texto blanco */
 }
 
-ion-datetime {
-    --background: #e4d0ff; /* Fondo azul claro */
-    --background-color: #8000ff;
-    --color: #000000; /* Texto en color negro */
-    --color-selected: #000000; /* Texto seleccionado en negro */
-    --highlight-background: #a406f3; /* Fondo del día seleccionado en blanco */
-    --highlight-color: #8000ff; /* Color del día seleccionado */
-    --border-radius: 10px; /* Bordes redondeados */
+/* Contenedor principal del contenido del chat */
+.chat-container {
+  text-align: center; /* Centramos todo el contenido */
+  margin-top: 50px; /* Espacio superior */
+  padding: 20px; /* Añadimos un poco de padding alrededor */
+  background-color: #e3fdfb; /* Fondo azul claro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+}
+
+/* Fondo del contenido */
+ion-content {
+  --background: #e3fdfb !important; /* Asegura un fondo consistente de azul claro */
+  --ion-background-color: #e3fdfb !important; /* Color de fondo de la página */
+  color: #000000; /* Texto negro para buen contraste */
+}
+
+/* Título en la página del chat */
+h2 {
+  font-size: 1.5rem; /* Tamaño del título */
+  color: #000000; /* Color negro */
+  font-weight: bold; /* Negrita para resaltar */
+  margin-bottom: 30px; /* Espacio debajo del título */
+}
+
+/* Estilo del botón de abrir WhatsApp */
+ion-button {
+  --background: #25d366; /* Color verde de WhatsApp */
+  --color: #ffffff; /* Texto blanco */
+  font-weight: bold; /* Texto en negrita */
+  border-radius: 8px; /* Bordes redondeados para el botón */
+  transition: transform 0.2s ease; /* Animación suave en el botón */
+  padding: 10px 15px; /* Espaciado dentro del botón */
+  font-size: 1.2rem; /* Tamaño adecuado para mejor legibilidad */
+
+  /* Efecto de transformación al pasar el mouse por encima */
+  &:hover {
+    transform: scale(1.05); /* Aumenta el tamaño ligeramente */
   }
-  
-  ion-picker {
-    --background: #c79eff; /* Fondo más claro */
-    --color: #000000;
-    --button-color: #000000; /* Color del texto en los botones */
-    --button-background: #6e06ff; /* Fondo de los botones */
-    --title-color: #8000ff
+}
+
+/* Ajustes de ion-item para quitar fondo oscuro y ajustar texto */
+ion-item {
+  --background: transparent; /* Quitar fondo oscuro por defecto */
+  --color: #000000 !important; /* Texto en color negro */
+}
+
+/* Cambiar color del ícono de WhatsApp */
+ion-icon {
+  font-size: 1.5rem; /* Aumentar el tamaño del ícono para hacerlo más visible */
+  margin-right: 8px; /* Añadir espacio entre el ícono y el texto */
+  color: #ffffff; /* Ícono blanco para mantener consistencia */
+}
+
+/* Ajuste del contenido para pantallas móviles */
+@media (max-width: 600px) {
+  .chat-container {
+    margin-top: 20px; /* Reducimos el margen superior en pantallas más pequeñas */
+    padding: 15px; /* Menos padding para adaptarse al tamaño */
   }
-  ::ng-deep .mat-calendar {
-    background-color: #ecdeff !important; /* Fondo azul claro */
-    color: #000 !important; /* Texto en negro */
+
+  h2 {
+    font-size: 1.3rem; /* Reducir el tamaño del título para móviles */
   }
-  
-  /* Cambiar color del día seleccionado */
-  ::ng-deep .mat-calendar-body-selected {
-    background-color: #8000ff !important; /* Fondo azul para el día seleccionado */
-    color: #050505 !important; /* Texto blanco para el día seleccionado */
+
+  ion-button {
+    font-size: 1rem; /* Ajustar el tamaño del botón para móviles */
   }
-  
-  /* Cambiar el color de los días al hacer hover */
-  ::ng-deep .mat-calendar-body-cell:hover {
-    background-color: #8000ff !important; /* Color azul oscuro al pasar el ratón */
-    color: #000000 !important; /* Texto blanco al hacer hover */
-  }
-  
-  /* Cambiar color de los días deshabilitados */
-  ::ng-deep .mat-calendar-body-disabled {
-    color: rgb(247, 16, 16) !important; /* Color gris para días deshabilitados */
-  }
-  
-  /* Cambiar el color de los botones de navegación (meses/años) */
-  ::ng-deep .mat-calendar-next-button, 
-  ::ng-deep .mat-calendar-previous-button {
-    color: #8000ff !important; /* Color de las flechas de navegación */
-  }
-  
-  /* Cambiar color del mes seleccionado */
-  ::ng-deep .mat-calendar-period-button {
-    color: #8000ff !important; /* Color del botón de mes */
-    
-  }
+}
+
+/* Ajustes generales */
+body, ion-app, ion-content {
+  background-color: #e3fdfb !important; /* Fondo consistente en azul claro para evitar el fondo negro */
+  color: #000000; /* Asegurar el color del texto en negro */
+}
+
+/* Opciones del formulario */
+label, p, span, h2, ion-label {
+  color: #000000 !important; /* Asegurando texto negro para todas las etiquetas y descripciones */
+  font-weight: bold; /* Texto en negrita para asegurar buena legibilidad */
+}
+
+/* Asegurar color del toggle y otros elementos de interacción */
+ion-toggle {
+  --handle-background: #25d366; /* Verde de WhatsApp */
+  --background-checked: #25d366; /* Fondo del toggle cuando está activado */
+  --background: #e0e0e0; /* Fondo gris cuando está desactivado */
+}

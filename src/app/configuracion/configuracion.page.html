@@ -1,16 +1,71 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="custom-toolbar">
+    <ion-title class="text-center">Mi Configuración</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/" text="Atrás"></ion-back-button>
     </ion-buttons>
-    <ion-title class="text-center">Mi Configuración</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
-    
-   
-    
+  <div class="config-container">
+    <ion-list lines="full">
+      <ion-item button (click)="cambiarNotificaciones()">
+        <ion-icon name="notifications-outline" slot="start"></ion-icon>
+        <ion-label>Notificaciones</ion-label>
+        <ion-toggle slot="end" checked="true"></ion-toggle>
+      </ion-item>
+
+      <ion-item button (click)="cambiarIdioma()">
+        <ion-icon name="language-outline" slot="start"></ion-icon>
+        <ion-label>Idioma</ion-label>
+        <ion-select slot="end" placeholder="Seleccionar">
+          <ion-select-option value="es">Español</ion-select-option>
+          <ion-select-option value="en">Inglés</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item button (click)="actualizarDatosPersonales()">
+        <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+        <ion-label>Datos Personales</ion-label>
+      </ion-item>
+
+      <ion-item button (click)="cambiarContrasena()">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-label>Cambiar Contraseña</ion-label>
+      </ion-item>
+
+      <ion-item button>
+        <ion-icon name="finger-print-outline" slot="start"></ion-icon>
+        <ion-label>Autenticación Biométrica</ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+
+      <ion-item button>
+        <ion-icon name="contrast-outline" slot="start"></ion-icon>
+        <ion-label>Modo Oscuro</ion-label>
+        <ion-toggle slot="end" (ionChange)="modoOscuro($event)"></ion-toggle>
+      </ion-item>
+
+      <ion-item button (click)="soporteTecnico()">
+        <ion-icon name="help-circle-outline" slot="start"></ion-icon>
+        <ion-label>Soporte Técnico</ion-label>
+      </ion-item>
+
+      <ion-item button>
+        <ion-icon name="document-text-outline" slot="start"></ion-icon>
+        <ion-label>Términos y Condiciones</ion-label>
+      </ion-item>
+
+      <ion-item button>
+        <ion-icon name="shield-checkmark-outline" slot="start"></ion-icon>
+        <ion-label>Privacidad y Seguridad</ion-label>
+      </ion-item>
+
+      <ion-item button (click)="logout()">
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+        <ion-label>Salir de la Cuenta</ion-label>
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>

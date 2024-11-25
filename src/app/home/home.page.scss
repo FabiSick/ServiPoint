@@ -40,7 +40,7 @@ ion-content {
 
 ion-card {
   --background: #ffffff;
-  --color: #02d4c6; /* Texto oscuro para buen contraste */
+  --color: #00b5a9; /* Texto oscuro para buen contraste */
   border-radius: 15px; /* Bordes redondeados */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.494); /* Sombra ligera */
   text-align: center; /* Centrar el contenido */
@@ -55,9 +55,9 @@ ion-card {
 }
 
 ion-card-title {
-  --color: #02d4c6;
+  --color: #00b5a9;
   font-weight: bold;
-  font-size: 1rem; /* Tamaño de texto más pequeño para evitar que se corte */
+  font-size: 1.25rem; /* Tamaño de texto más pequeño para evitar que se corte */
   margin-top: 10px;
   white-space: normal; /* Asegura que el título haga un salto de línea si es necesario */
 }
