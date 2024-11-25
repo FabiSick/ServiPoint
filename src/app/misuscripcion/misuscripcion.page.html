@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="Atrás"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-center">Suscripciones Disponibles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Lista de productos (subscripciones) -->
+  <div class="product-list">
+    <ion-card *ngFor="let product of products" class="product-card">
+      <ion-card-header>
+        <ion-card-title>{{ product.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Costo:</strong> {{ product.cost | currency:'CLP' }}</p>
+        <ion-button *ngIf="!isProductPurchased(product.id)" color="success" (click)="addToCart(product)">
+          <ion-icon name="cart-outline"></ion-icon> Añadir al Carrito
+        </ion-button>
+        <ion-button *ngIf="isProductPurchased(product.id)" color="tertiary" disabled>
+          Comprado
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Carrito de Compras -->
+  <ion-card *ngIf="cart.length > 0" class="cart-card">
+    <ion-card-header>
+      <ion-card-title>Carrito de Compras</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let item of cart">
+          <ion-label>{{ item.name }} - {{ item.cost | currency:'CLP' }}</ion-label>
+          <ion-button color="danger" (click)="removeFromCart(item)">Eliminar</ion-button>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="block" color="primary" (click)="purchaseCart()">Comprar</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+``
