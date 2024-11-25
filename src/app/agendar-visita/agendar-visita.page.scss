@@ -21,6 +21,7 @@ ion-content {
 /* Ajustes específicos para ion-item y sus componentes hijos */
 ion-item {
   --background: transparent; /* Fondo transparente para que se vea el fondo del ion-content */
+  color:#000000
 }
 
 /* Cambiar color de las etiquetas ion-label */
@@ -86,6 +87,7 @@ ion-button {
   }
   
 }
+
 ion-select-option {
   --color: #000000 !important; /* Forzar el color negro para las opciones del selector */
   font-weight: bold; /* Negrita para asegurar legibilidad */
