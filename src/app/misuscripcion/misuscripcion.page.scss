@@ -1,0 +1,147 @@
+.custom-toolbar {
+    --background: #02d4c6; /* Fondo azul */
+    --color: #000000; /* Letras blancas */
+    --border-color: transparent; /* Eliminar el borde por defecto */
+  }
+  
+  ion-title {
+    font-size: 1.6rem; /* Aumenta un poco más el tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    text-align: center;
+    line-height: 1.5; /* Asegura que la "G" no se corte */
+    letter-spacing: 0.5px; /* Aumenta el espacio entre las letras */
+  }
+  ion-toolbar {
+    padding: 10px; /* Añadir espacio extra para mejorar legibilidad */
+  }
+  
+  /* Estilo para el título h2 */
+  h2.title {
+    color: #000000; /* Color de texto oscuro (azul oscuro) */
+    font-weight: bold; /* Negrita para mejor visibilidad */
+    font-size: 2rem; /* Aumenta el tamaño del título */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  ion-item {
+    font-weight: bold; /* Aseguramos que los labels de los inputs también estén en negrita */
+    --color: #000000; /* Texto oscuro para mejor contraste */
+  }
+  
+  ion-label {
+    font-weight: bold; /* Negrita para los textos de los labels */
+    color: #000000; /* Color del texto de las etiquetas */
+    font-size: 1.2rem; /* Tamaño adecuado para mejorar la legibilidad */
+  }
+  
+  ion-input {
+    --color: #000000; /* Texto oscuro para el input */
+    font-weight: bold; /* Hacer que el texto ingresado también esté en negrita */
+    font-size: 1rem; /* Ajuste del tamaño de fuente */
+  }
+  
+  .example-button-row {
+    margin-top: 15px;
+  }
+  
+  a[mat-button] {
+    color: #02d4c6; /* Color azul vivo */
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  button.mat-raised-button {
+    font-weight: bold;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+  }
+  
+  button.mat-raised-button:hover {
+    transform: scale(1.05); /* Efecto de hover */
+  }
+  
+  /* Fondo azul claro para el contenido */
+  ion-content {
+    --background: #e3fdfb; /* Fondo de color azul claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; // Ajusta el margen superior según tus necesidades
+  }
+  
+  .login-logo {
+    max-width: 200px; // Ajusta el tamaño del logo según el diseño
+    height: auto;
+  }
+  /* Contenedor del formulario */
+  .container {
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color:#eafdfb; /* Fondo blanco para contraste */
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra para el contenedor */
+  }
+  
+  /* Estilos para los campos de texto de Angular Material */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  
+    .mat-form-field-label {
+      color: #e3fdfb; /* Cambiar color de la etiqueta */
+      font-weight: bold; /* Etiquetas en negrita */
+      font-size: 1.2rem; /* Tamaño del texto de la etiqueta */
+    }
+  
+    .mat-input-element {
+      font-weight: bold; /* Texto en negrita */
+      color: #000000; /* Texto oscuro para mejor contraste */
+    }
+  
+    .mat-form-field-ripple {
+      background-color: #02d4c6; /* Cambiar color de la línea de enfoque */
+    }
+  }
+  
+  /* Estilo para los mensajes de error */
+  ion-text {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  
+  /* Botón de ingresar */
+  button[mat-raised-button] {
+    font-weight: bold;
+    color: #070707;
+    background-color: #02d4c6;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+  
+    &:hover {
+      background-color: #02d4c6; /* Cambiar color de hover */
+      transform: scale(1.05); /* Animación de hover */
+    }
+  
+    &:disabled {
+      background-color: #02d4c6; /* Color de botón deshabilitado */
+      cursor: not-allowed;
+    }
+  }
+  
+  /* Botones de crear cuenta y restablecer contraseña */
+  button[mat-button] {
+    font-weight: bold;
+    color: #02d4c6;
+  
+    &:hover {
+      color: #02d4c6; /* Cambiar color de hover */
+    }
+  }
+  
