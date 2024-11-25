@@ -1,163 +1,153 @@
-.custom-toolbar {
-    --background: #8000ff; /* Fondo azul */
-    --color: #fefefe; /* Letras blancas */
-    --border-color: transparent; /* Eliminar el borde por defecto */
-  }
-  
-  ion-title {
-    font-size: 1.6rem; /* Aumenta un poco más el tamaño del texto */
-    font-weight: bold; /* Texto en negrita */
-    text-align: center;
-    line-height: 1.5; /* Asegura que la "G" no se corte */
-    letter-spacing: 0.5px; /* Aumenta el espacio entre las letras */
-  }
-  
-  ion-back-button {
-    --color: #ffffff; /* Color blanco para el texto del botón */
-    font-weight: bold; /* Negrita para el botón de retroceso */
-  }
-  
-  ion-toolbar {
-    padding: 10px; /* Añadir espacio extra para mejorar legibilidad */
-  }
-  
-  ion-content {
-    --background: #f7f1ff; /* Fondo de color azul claro */
-    --title--color: #8000ff;
-    color: #060606; /* Texto en color oscuro para mejor contraste */
-    font-size: 1.2rem; /* Ajusta el tamaño base del texto para mejorar la legibilidad */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  ion-item {
-    --color: #000001;
-    --highlight-background: #dac0ff;
-    --background: #e4d0ff;
-    --background-activated: #8000ff; /* Color del botón al presionarlo */
-    --background-focused: #e4d0ff;
-    margin-bottom: 15px;
-    color: #060606; /* Texto en color oscuro para mejor contraste */
-    font-weight: bold; /* Texto en negrita para mayor visibilidad */
-  }
-  
-  ion-button,
-  button[mat-button] {
-    margin-top: 20px;
-    width: 100%;
-    --background: #e4d0ff; /* Color de los botones en azul */
-    --background-activated: #8000ff; /* Color del botón al presionarlo */
-    --background-focused: #8000ff;
-    --border-radius: 12px;
-    --color: rgb(0, 0, 0);
-    font-size: 18px;
-    font-weight: bold; /* Texto en negrita en el botón */
-  }
-  
-  ion-button {
-    margin-top: 20px;
-    width: 100%;
-    --background: #c79eff; /* Color de los botones en azul */
-    --background-activated: #8000ff; /* Color del botón al presionarlo */
-    --background-focused: #e4d0ff;
-    --border-radius: 12px;
-    --color: rgb(2, 2, 2);
-    font-size: 18px;
-    font-weight: bold; /* Texto en negrita en el botón */
-  }
-
-  ion-label {
-    font-size: 2rem; /* Ajuste del tamaño de la etiqueta */
-  }
-  
-  input {
-    font-weight: bold; /* Aseguramos que el texto autocompletado se vea bien */
-    color: #060606;
-  }
-  
-  ion-input {
-    --color: #060606;
-    --padding-start: 10px;
-  }
-  
-  button[mat-raised-button] {
-    font-weight: bold;
-    color: #000000;
-    background-color: #8000ff;  /* Color de fondo azul brillante */
-    border-radius: 8px;  /* Bordes redondeados */
-    width: 100%;  /* Asegura que el botón ocupe el 100% del ancho */
-    padding: 12px;  /* Padding para asegurar que el texto esté centrado */
-    transition: transform 0.2s ease;
-  
-    &:hover {
-      background-color: #8000ff;  /* Color de hover */
-      transform: scale(1.05);  /* Efecto de hover */
-    }
-  
-    &:disabled {
-      background-color: #000000;  /* Color de botón deshabilitado */
-      cursor: not-allowed;
-    }
+/* Sobrescribir globalmente el estilo del toolbar */
+ion-toolbar {
+  --background: #02d4c6 !important; /* Cambia el fondo del toolbar */
+  --color: #000000 !important; /* Cambia el color del texto a blanco */
 }
 
-ion-datetime {
-    --background: #e4d0ff; /* Fondo azul claro */
-    --background-color: #8000ff;
-    --color: #000000; /* Texto en color negro */
-    --color-selected: #000000; /* Texto seleccionado en negro */
-    --highlight-background: #a406f3; /* Fondo del día seleccionado en blanco */
-    --highlight-color: #8000ff; /* Color del día seleccionado */
-    --border-radius: 10px; /* Bordes redondeados */
+/* Cambiar el título de todas las páginas */
+ion-title {
+  color: #000000 !important;
+  font-weight: bold;
+}
+
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e3fdfb; /* Fondo de color azul claro */
+}
+
+.custom-toolbar {
+  --background: #02d4c6; /* Fondo azul */
+  --color: #ffffff; /* Letras blancas */
+  --border-color: transparent; /* Eliminar el borde por defecto */
+}
+
+ion-title {
+  font-size: 2.5rem; /* Aumenta un poco más el tamaño del texto */
+  font-weight: bold; /* Texto en negrita */
+  text-align: center;
+  line-height: 1.5; /* Asegura que la "G" no se corte */
+  letter-spacing: 0.5px; /* Aumenta el espacio entre las letras */
+}
+
+ion-content {
+  --background: #e3fdfb; /* Fondo de color azul claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 16px; /* Espaciado para mejorar el diseño */
+}
+
+.form-container {
+  width: 90%;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(131, 8, 232, 0.1);
+}
+
+ion-card {
+  --background: #ffffff;
+  --color: #00b5a9; /* Texto oscuro para buen contraste */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.494); /* Sombra ligera */
+  text-align: center; /* Centrar el contenido */
+  padding: 10px; /* Espaciado interno */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transición suave */
+
+  /* Agregar borde y efecto al hacer clic */
+  &:hover, &:focus {
+    transform: scale(1.05); /* Ampliar levemente al hacer hover */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
   }
-  
-  ion-picker {
-    --background: #c79eff; /* Fondo más claro */
-    --color: #000000;
-    --button-color: #000000; /* Color del texto en los botones */
-    --button-background: #6e06ff; /* Fondo de los botones */
-    --title-color: #8000ff
-  }
-  ::ng-deep .mat-calendar {
-    background-color: #ecdeff !important; /* Fondo azul claro */
-    color: #000 !important; /* Texto en negro */
-  }
-  
-  /* Cambiar color del día seleccionado */
-  ::ng-deep .mat-calendar-body-selected {
-    background-color: #8000ff !important; /* Fondo azul para el día seleccionado */
-    color: #050505 !important; /* Texto blanco para el día seleccionado */
-  }
-  
-  /* Cambiar el color de los días al hacer hover */
-  ::ng-deep .mat-calendar-body-cell:hover {
-    background-color: #8000ff !important; /* Color azul oscuro al pasar el ratón */
-    color: #000000 !important; /* Texto blanco al hacer hover */
-  }
-  
-  /* Cambiar color de los días deshabilitados */
-  ::ng-deep .mat-calendar-body-disabled {
-    color: rgb(247, 16, 16) !important; /* Color gris para días deshabilitados */
-  }
-  
-  /* Cambiar el color de los botones de navegación (meses/años) */
-  ::ng-deep .mat-calendar-next-button, 
-  ::ng-deep .mat-calendar-previous-button {
-    color: #8000ff !important; /* Color de las flechas de navegación */
-  }
-  
-  /* Cambiar color del mes seleccionado */
-  ::ng-deep .mat-calendar-period-button {
-    color: #8000ff !important; /* Color del botón de mes */
-    
-  }
-  ion-item {
-    --background: #f5f5f5; /* Fondo gris claro */
-    --highlight-background: #e0e0e0; /* Fondo destacado al seleccionar */
-    --color: #000000; /* Texto en negro */
-    --background-activated: #bdbdbd; /* Fondo cuando se presiona */
-    --background-focused: #e0e0e0; /* Fondo cuando se enfoca */
-  }
-  
-  
+}
+
+ion-card-title {
+  --color: #00b5a9;
+  font-weight: bold;
+  font-size: 1.25rem; /* Tamaño de texto más pequeño para evitar que se corte */
+  margin-top: 10px;
+  white-space: normal; /* Asegura que el título haga un salto de línea si es necesario */
+}
+
+ion-card-content {
+  font-size: 1rem; /* Ajuste del tamaño del texto */
+  color: #00ada1; /* Color más claro para el contenido */
+  margin-top: 5px;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px; /* Bordes redondeados para las imágenes */
+  margin-bottom: 10px;
+}
+
+
+/* Estilos para el menú desplegable */
+ion-menu::part(container) {
+  background-color: #00fffb !important; /* Cambiamos el fondo del menú a azul brillante con prioridad */
+  color: white !important; /* Texto en blanco para mejor contraste */
+  border-radius: 0 20px 20px 0;
+  box-shadow: 4px 0px 16px rgba(158, 10, 232, 0.18);
+}
+
+ion-menu::part(backdrop) {
+  background-color: rgba(81, 0, 255, 0.5) !important; /* Color translúcido del backdrop */
+}
+
+/* Estilos para el menú desplegable */
+ion-menu::part(container) {
+  background-color: #7b5bf2; /* Cambiamos el fondo del menú a azul brillante */
+  color: white; /* Texto en blanco para mejor contraste */
+  border-radius: 0 20px 20px 0;
+  box-shadow: 4px 0px 16px rgba(52, 52, 52, 0.18);
+}
+
+ion-menu::part(backdrop) {
+  background-color: rgba(128, 0, 255, 0.5); /* Color translúcido del backdrop */
+}
+
+/* Opciones dentro del menú */
+.menu-button {
+  background-color: #7b5bf2 !important; /* Azul más oscuro para los botones dentro del menú */
+  color: white !important;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.menu-button:hover {
+  background-color: #02d4c6; /* Azul más oscuro al hacer hover */
+}
+
+/* Estilo para el botón de cerrar sesión */
+.logout-button {
+  color: #ffffff; /* Texto blanco para visibilidad */
+  font-weight: bold;
+}
+
+.logout-button:hover {
+  color: #f0f0f0; /* Color ligeramente más claro al hacer hover */
+}
+
+/* Estilo adicional para asegurar que el diseño sea accesible */
+ion-card-content {
+  font-size: 1rem; /* Tamaño más grande para mejor visibilidad */
+  color: #2c094d; /* Color oscuro para contraste */
+}
+
+ion-item {
+  --background: #f5f5f5; /* Fondo gris claro */
+  --highlight-background: #e0e0e0; /* Fondo destacado al seleccionar */
+  --color: #000000; /* Texto en negro */
+  --background-activated: #bdbdbd; /* Fondo cuando se presiona */
+  --background-focused: #e0e0e0; /* Fondo cuando se enfoca */
+}
