@@ -18,14 +18,19 @@
   ],
   "products": [
     {
-      "id": 0,
+      "id": "0",
       "name": "Anual",
-      "cost": 99.99
+      "cost": 99990
     },
     {
       "id": null,
       "name": "Mensual",
-      "cost": 9.99
+      "cost": 9990
+    },
+    {
+      "id": 0,
+      "name": "3 Meses",
+      "cost": 25990
     }
   ]
 }

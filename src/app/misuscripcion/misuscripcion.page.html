@@ -34,7 +34,7 @@
     <ion-card-content>
       <ion-list>
         <ion-item *ngFor="let item of cart">
-          <ion-label>{{ item.name }} - {{ item.cost | currency:'CLP' }}</ion-label>
+          <ion-label>{{ item.name }} - {{ item.cost }}</ion-label>
           <ion-button color="danger" (click)="removeFromCart(item)">Eliminar</ion-button>
         </ion-item>
       </ion-list>
