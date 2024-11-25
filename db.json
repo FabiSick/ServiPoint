@@ -15,17 +15,5 @@
       "nombre": "Carla Mejias",
       "telefono": "12345678"
     }
-  ],
-  "products": [
-    {
-      "id": 0,
-      "name": "Anual",
-      "cost": 99.99
-    },
-    {
-      "id": null,
-      "name": "Mensual",
-      "cost": 9.99
-    }
   ]
 }

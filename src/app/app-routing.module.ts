@@ -73,10 +73,6 @@ const routes: Routes = [
   {
     path: 'editar-usuario',
     loadChildren: () => import('./editar-usuario/editar-usuario.module').then( m => m.EditarUsuarioPageModule)
-  },
-  {
-    path: 'misuscripcion',
-    loadChildren: () => import('./misuscripcion/misuscripcion.module').then( m => m.MisuscripcionPageModule)
   }
 
 
