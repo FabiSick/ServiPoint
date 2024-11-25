@@ -134,7 +134,33 @@
       cursor: not-allowed;
     }
   }
-  
+  /* Estilo para la tarjeta del carrito de compras */
+.cart-card {
+  --background: #ffffff; /* Fondo blanco para el ion-card */
+  --ion-card-background: #ffffff; /* Fondo para que todas las partes del card sean consistentes */
+  color: #000000; /* Texto en negro para buen contraste */
+  border-radius: 10px; /* Bordes redondeados para una mejor estética */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra para hacer que destaque */
+  padding: 15px; /* Añadir algo de espacio interno */
+}
+
+/* Cambiar color de los ion-items dentro del carrito */
+.cart-card ion-item {
+  --background: #f9f9f9; /* Fondo claro para los items */
+  --color: #000000; /* Texto en negro */
+  font-weight: bold; /* Texto negrita para destacar */
+}
+
+/* Cambiar el estilo del botón "Eliminar" */
+.cart-card ion-button {
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.cart-card ion-button[color="danger"] {
+  --background: #e74c3c; /* Fondo rojo */
+  --color: #ffffff; /* Texto blanco */
+}
   /* Botones de crear cuenta y restablecer contraseña */
   button[mat-button] {
     font-weight: bold;
