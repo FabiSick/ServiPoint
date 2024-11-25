@@ -54,7 +54,7 @@ export class HomePage implements OnInit {
   }
 
   goToSuscripciones() {
-    this.router.navigate(['/suscripciones']);
+    this.router.navigate(['/misuscripcion']);
   }
   
   goToConfiguracion() {

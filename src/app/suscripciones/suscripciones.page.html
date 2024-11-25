@@ -3,14 +3,55 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/" text="Atrás"></ion-back-button>
     </ion-buttons>
-    <ion-title class="text-center">Mi suscripción</ion-title>
+    <ion-title class="text-center">Gestión de Suscripciones</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
-    
-   
-    
+  <!-- Lista de productos (subscripciones) -->
+  <div class="product-list">
+    <ion-card *ngFor="let product of products" class="product-card">
+      <ion-card-header>
+        <ion-card-title>{{ product.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Costo:</strong> {{ product.cost }}</p>
+        <ion-button color="primary" (click)="editProduct(product)">
+          <ion-icon name="create-outline"></ion-icon> Editar
+        </ion-button>
+        <ion-button color="danger" (click)="deleteProduct(product.id)">
+          <ion-icon name="trash-outline"></ion-icon> Eliminar
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
   </div>
+
+  <!-- Botón flotante para agregar un nuevo producto -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" (click)="addProduct()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <!-- Formulario para agregar o editar un producto -->
+  <ion-card *ngIf="isEditMode || isAddMode">
+    <ion-card-header>
+      <ion-card-title>{{ isEditMode ? 'Editar Producto' : 'Crear Nuevo Producto' }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form (ngSubmit)="saveProduct()">
+        <ion-item>
+          <ion-label position="floating">Nombre del Producto</ion-label>
+          <ion-input [(ngModel)]="productData.name" name="name" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Costo</ion-label>
+          <ion-input type="number" [(ngModel)]="productData.cost" name="cost" required></ion-input>
+        </ion-item>
+        <ion-button expand="block" type="submit" color="success">
+          {{ isEditMode ? 'Actualizar' : 'Crear' }}
+        </ion-button>
+        <ion-button expand="block" color="medium" (click)="clearForm()">Cancelar</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

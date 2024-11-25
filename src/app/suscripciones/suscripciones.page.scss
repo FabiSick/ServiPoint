@@ -1,16 +1,16 @@
 .custom-toolbar {
-    --background: #8000ff; /* Fondo azul */
-    --color: #fefefe; /* Letras blancas */
-    --border-color: transparent; /* Eliminar el borde por defecto */
-  }
+  --background: #8000ff; /* Fondo azul */
+  --color: #fefefe; /* Letras blancas */
+  --border-color: transparent; /* Eliminar el borde por defecto */
+}
   
-  ion-title {
-    font-size: 1.6rem; /* Aumenta un poco más el tamaño del texto */
-    font-weight: bold; /* Texto en negrita */
-    text-align: center;
-    line-height: 1.5; /* Asegura que la "G" no se corte */
-    letter-spacing: 0.5px; /* Aumenta el espacio entre las letras */
-  }
+ion-title {
+  font-size: 1.6rem; /* Aumenta un poco más el tamaño del texto */
+  font-weight: bold; /* Texto en negrita */
+  text-align: center;
+  line-height: 1.5; /* Asegura que la "G" no se corte */
+  letter-spacing: 0.5px; /* Aumenta el espacio entre las letras */
+}
   
   ion-back-button {
     --color: #ffffff; /* Color blanco para el texto del botón */
@@ -20,7 +20,7 @@
   ion-toolbar {
     padding: 10px; /* Añadir espacio extra para mejorar legibilidad */
   }
-  
+
   ion-content {
     --background: #f7f1ff; /* Fondo de color azul claro */
     --title--color: #8000ff;
@@ -100,55 +100,22 @@
       background-color: #000000;  /* Color de botón deshabilitado */
       cursor: not-allowed;
     }
-}
+  }
 
-ion-datetime {
-    --background: #e4d0ff; /* Fondo azul claro */
-    --background-color: #8000ff;
-    --color: #000000; /* Texto en color negro */
-    --color-selected: #000000; /* Texto seleccionado en negro */
-    --highlight-background: #a406f3; /* Fondo del día seleccionado en blanco */
-    --highlight-color: #8000ff; /* Color del día seleccionado */
-    --border-radius: 10px; /* Bordes redondeados */
+  .product-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
-  ion-picker {
-    --background: #c79eff; /* Fondo más claro */
-    --color: #000000;
-    --button-color: #000000; /* Color del texto en los botones */
-    --button-background: #6e06ff; /* Fondo de los botones */
-    --title-color: #8000ff
-  }
-  ::ng-deep .mat-calendar {
-    background-color: #ecdeff !important; /* Fondo azul claro */
-    color: #000 !important; /* Texto en negro */
+  .product-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
   }
   
-  /* Cambiar color del día seleccionado */
-  ::ng-deep .mat-calendar-body-selected {
-    background-color: #8000ff !important; /* Fondo azul para el día seleccionado */
-    color: #050505 !important; /* Texto blanco para el día seleccionado */
-  }
-  
-  /* Cambiar el color de los días al hacer hover */
-  ::ng-deep .mat-calendar-body-cell:hover {
-    background-color: #8000ff !important; /* Color azul oscuro al pasar el ratón */
-    color: #000000 !important; /* Texto blanco al hacer hover */
-  }
-  
-  /* Cambiar color de los días deshabilitados */
-  ::ng-deep .mat-calendar-body-disabled {
-    color: rgb(247, 16, 16) !important; /* Color gris para días deshabilitados */
-  }
-  
-  /* Cambiar el color de los botones de navegación (meses/años) */
-  ::ng-deep .mat-calendar-next-button, 
-  ::ng-deep .mat-calendar-previous-button {
-    color: #8000ff !important; /* Color de las flechas de navegación */
-  }
-  
-  /* Cambiar color del mes seleccionado */
-  ::ng-deep .mat-calendar-period-button {
-    color: #8000ff !important; /* Color del botón de mes */
-    
+  .product-cost {
+    font-size: 1em;
+    margin-top: 4px;
   }
