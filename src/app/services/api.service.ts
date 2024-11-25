@@ -6,70 +6,71 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-
-  private apiUrl = 'http://localhost:3000/users';  // URL de la API REST
-  private subscriptionsApiUrl = 'http://localhost:3000/products';  // URL de la API de Suscripciones
+  private usersApiUrl = 'http://localhost:3000/users';  // URL de la API REST para usuarios
+  private productsApiUrl = 'http://localhost:3000/products';  // URL de la API REST para productos (subscripciones)
 
   constructor(private http: HttpClient) { }
-
 
   // =========================== Métodos para Usuarios ===========================
   // Registrar un nuevo usuario
   registerUser(user: any): Observable<any> {
-    return this.http.post(this.apiUrl, user);
+    return this.http.post(this.usersApiUrl, user);
   }
 
   // Obtener todos los usuarios
   getUsers(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(this.usersApiUrl);
   }
 
-  //LOGIN
+  // Obtener un usuario específico por ID
+  getUserById(userId: number): Observable<any> {
+    return this.http.get(`${this.usersApiUrl}/${userId}`);
+  }
+
   // Obtener un usuario específico por nombre de usuario
   getUserByUsername(username: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}?username=${username}`);
+    return this.http.get(`${this.usersApiUrl}?username=${username}`);
   }
 
   // Actualizar los datos de un usuario
   updateUser(id: number, user: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, user);
+    return this.http.put(`${this.usersApiUrl}/${id}`, user);
   }
 
   // Eliminar un usuario por ID
   deleteUser(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    return this.http.delete(`${this.usersApiUrl}/${id}`);
   }
+
   // =========================== Métodos para Productos (Subscripciones) ===========================
-
-  // Crear un nuevo producto (subscripción)
+  // Añadir un nuevo producto (subscripción)
   addProduct(product: any): Observable<any> {
-    return this.http.post(this.subscriptionsApiUrl, product);
+    return this.http.post(this.productsApiUrl, product);
   }
 
-  // Obtener todos los productos (subscripciones)
+  // Obtener todos los productos
   getAllProducts(): Observable<any> {
-    return this.http.get(this.subscriptionsApiUrl);
+    return this.http.get(this.productsApiUrl);
   }
 
-  // Actualizar un producto (subscripción) por ID
+  // Actualizar un producto existente
   updateProduct(id: number, product: any): Observable<any> {
-    return this.http.put(`${this.subscriptionsApiUrl}/${id}`, product);
+    return this.http.put(`${this.productsApiUrl}/${id}`, product);
   }
 
-  // Eliminar un producto (subscripción) por ID
+  // Eliminar un producto por ID
   deleteProduct(id: number): Observable<any> {
-    return this.http.delete(`${this.subscriptionsApiUrl}/${id}`);
+    return this.http.delete(`${this.productsApiUrl}/${id}`);
   }
 
-  // =========================== Asociar Productos a Usuarios ===========================
-
-  // Asociar un producto a un usuario (compra)
+  // =========================== Métodos para Asociar Usuarios y Productos ===========================
+  // Asociar un producto con un usuario (simulación de compra)
   purchaseProduct(userId: number, productId: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${userId}/products`, { productId });
+    return this.http.post(`${this.usersApiUrl}/${userId}/products`, { productId });
   }
 
-  // Obtener los productos comprados por un usuario
+  // Obtener productos comprados por un usuario específico
   getUserProducts(userId: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${userId}/products`);
+    return this.http.get(`${this.usersApiUrl}/${userId}/products`);
   }
 }

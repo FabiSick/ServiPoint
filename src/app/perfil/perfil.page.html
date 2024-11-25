@@ -3,14 +3,58 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/" text="Atrás"></ion-back-button>
     </ion-buttons>
-    <ion-title class="text-center">Mi perfil</ion-title>
+    <ion-title class="text-center">Mi Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
-    
-   
-    
-  </div>
+  <!-- Mostrar perfil del usuario -->
+  <ion-card *ngIf="!isEditMode">
+    <ion-card-header>
+      <ion-card-title>Perfil de Usuario</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Nombres:</strong> {{ userData.firstName }}</p>
+      <p><strong>Apellidos:</strong> {{ userData.lastName }}</p>
+      <p><strong>Fecha de Nacimiento:</strong> {{ userData.birthdate | date }}</p>
+      <p><strong>Celular:</strong> +56 {{ userData.phoneNumber }}</p>
+      <p><strong>Marca del Computador:</strong> {{ userData.computerBrand }}</p>
+      <ion-button expand="block" color="primary" (click)="editProfile()">Editar Perfil</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Formulario para editar el perfil -->
+  <ion-card *ngIf="isEditMode">
+    <ion-card-header>
+      <ion-card-title>Editar Perfil</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form (ngSubmit)="saveProfile()">
+        <ion-item>
+          <ion-label position="floating">Nombres</ion-label>
+          <ion-input [(ngModel)]="userData.firstName" name="firstName" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Apellidos</ion-label>
+          <ion-input [(ngModel)]="userData.lastName" name="lastName" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Fecha de Nacimiento</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.birthdate" name="birthdate" placeholder="DD/MM/YYYY" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Número de Celular</ion-label>
+          <ion-input type="tel" [(ngModel)]="userData.phoneNumber" name="phoneNumber" placeholder="+56 9XXXXXXXX" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Marca del Computador</ion-label>
+          <ion-select [(ngModel)]="userData.computerBrand" name="computerBrand" interface="popover">
+            <ion-select-option *ngFor="let brand of computerBrands" [value]="brand">{{ brand }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-button expand="block" type="submit" color="success">Guardar Cambios</ion-button>
+        <ion-button expand="block" color="medium" (click)="cancelEdit()">Cancelar</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

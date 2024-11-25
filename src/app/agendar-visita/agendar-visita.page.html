@@ -11,16 +11,16 @@
   <div class="container">
     <form id="visitForm" (ngSubmit)="onSubmit()" autocomplete="off">
       <ion-item>
-        <ion-label position="floating">Fecha</ion-label>
-        <ion-datetime
-          displayFormat="DD/MM/YYYY"
-          pickerFormat="DD MMMM YYYY"
+        <ion-label position="floating">Fecha (DD/MM/YYYY)</ion-label>
+        <ion-input
           [(ngModel)]="selectedDate"
           name="selectedDate"
-          cancelText="Cancelar"
-          doneText="Seleccionar"
-          presentation="date">
-        </ion-datetime>
+          type="text"
+          placeholder="DD/MM/YYYY"
+          required
+          (ionInput)="formatDate($event)"
+          maxlength="10"
+        ></ion-input>
       </ion-item>
 
       <ion-item>

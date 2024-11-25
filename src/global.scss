@@ -42,6 +42,9 @@
 
 
 /* Fondo claro para la aplicación */
+* {
+  font-family: 'Poppins', sans-serif;
+}
 body {
     background-color: #f0f8ff; /* Azul claro */
     color: #333; /* Texto en color oscuro */
@@ -49,7 +52,7 @@ body {
   
   /* Estilos para la barra superior */
   ion-header {
-    background-color: #1e90ff; /* Azul vivo */
+    background-color: #00ffe1; /* Azul vivo */
     color: white;
   }
   

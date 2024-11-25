@@ -1,234 +1,80 @@
+/* Encabezado personalizado para la toolbar */
 .custom-toolbar {
-    --background: #8000ff; /* Fondo azul */
-    --color: #ffffff; /* Letras blancas */
-    --border-color: transparent; /* Eliminar el borde por defecto */
+  --background: #02d4c6; /* Fondo azul */
+  --color: #000000; /* Letras blancas */
+}
+
+/* Título del toolbar */
+ion-title {
+  font-size: 1.6rem; 
+  font-weight: bold; 
+  text-align: center;
+  line-height: 1.5; 
+  letter-spacing: 0.5px; 
+}
+
+/* Fondo del contenido - NO se cambiará */
+ion-content {
+  --background: #e3fdfb; /* Fondo de color azul claro */
+}
+
+/* Ajustes específicos para ion-item y sus componentes hijos */
+ion-item {
+  --background: transparent; /* Fondo transparente para que se vea el fondo del ion-content */
+}
+
+/* Cambiar color de las etiquetas ion-label */
+ion-label {
+  color: #000000 !important; /* Forzar color negro para mejor visibilidad */
+  font-weight: bold !important; /* Texto en negrita */
+  font-size: 1rem !important; /* Tamaño de fuente adecuado */
+}
+
+/* Cambiar color del texto ingresado en ion-input */
+ion-input {
+  --color: #000000 !important; /* Texto negro en el campo de entrada */
+  --placeholder-color: #666666 !important; /* Color del placeholder gris para contraste */
+  font-weight: bold; /* Texto en negrita */
+}
+
+/* Cambiar color de las opciones del ion-select */
+ion-select {
+  --color: #000000 !important; /* Texto negro para las opciones del select */
+}
+
+/* Cambiar color de los textos en ion-datetime */
+ion-datetime {
+  --color: #000000 !important; /* Texto negro en el calendario */
+  --placeholder-color: #666666 !important; /* Color del placeholder gris */
+}
+
+/* Estilo de los botones dentro del formulario */
+ion-button {
+  margin: 10px 0;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+
+  &.button-save {
+    --background: #02d4c6; /* Verde para el botón de guardar */
+    --color: #000000; /* Texto blanco */
   }
-  
-  ion-title {
-    font-size: 1.6rem; /* Aumenta un poco más el tamaño del texto */
-    font-weight: bold; /* Texto en negrita */
-    text-align: center;
-    line-height: 1.5; /* Asegura que la "G" no se corte */
-    letter-spacing: 0.5px; /* Aumenta el espacio entre las letras */
+
+  &.button-cancel {
+    --background: #02d4c6; /* Rojo para el botón de cancelar */
+    --color: #ffffff; /* Texto blanco */
   }
-  
-  ion-back-button {
-    --color: #ffffff; /* Color blanco para el texto del botón */
-    font-weight: bold; /* Negrita para el botón de retroceso */
+}
+
+/* Asegurar que los botones de edición tengan el color adecuado */
+.edit-profile-button {
+  --background: #02d4c6; 
+  --color: #ffffff; 
+  font-weight: bold;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05); 
   }
-  
-  ion-toolbar {
-    padding: 10px; /* Añadir espacio extra para mejorar legibilidad */
-  }
-  
-  ion-content {
-    --background: #f7f1ff; /* Fondo de color azul claro */
-    color: #060606; /* Texto en color oscuro para mejor contraste */
-    font-size: 1.2rem; /* Ajusta el tamaño base del texto para mejorar la legibilidad */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  ion-item {
-    --highlight-background: transparent;
-    --background: #ecdeff;
-    margin-bottom: 15px;
-    color: #060606; /* Texto en color oscuro para mejor contraste */
-    font-weight: bold; /* Texto en negrita para mayor visibilidad */
-  }
-  
-  ion-button,
-  button[mat-button] {
-    margin-top: 20px;
-    width: 100%;
-    --background: #8000ff; /* Color de los botones en azul */
-    --background-activated: #8000ff; /* Color del botón al presionarlo */
-    --background-focused: #8000ff;
-    --border-radius: 12px;
-    --color: white;
-    font-size: 18px;
-    font-weight: bold; /* Texto en negrita en el botón */
-  }
-  
-  ion-label {
-    font-size: 1rem; /* Ajuste del tamaño de la etiqueta */
-  }
-  
-  input {
-    font-weight: bold; /* Aseguramos que el texto autocompletado se vea bien */
-    color: #060606;
-  }
-  
-  ion-input {
-    --color: #060606;
-    --padding-start: 10px;
-  }
-  
-  button[mat-raised-button] {
-    font-weight: bold;
-    color: #fff;
-    background-color: #8000ff;  /* Color de fondo azul brillante */
-    border-radius: 8px;  /* Bordes redondeados */
-    width: 100%;  /* Asegura que el botón ocupe el 100% del ancho */
-    padding: 12px;  /* Padding para asegurar que el texto esté centrado */
-    transition: transform 0.2s ease;
-  
-    &:hover {
-      background-color: #6a00ff;  /* Color de hover */
-      transform: scale(1.05);  /* Efecto de hover */
-    }
-  
-    &:disabled {
-      background-color: #cccccc;  /* Color de botón deshabilitado */
-      cursor: not-allowed;
-    }
-  }
-  .custom-toolbar {
-    --background: #02d4c6; /* Fondo azul */
-    --color: #000000; /* Letras blancas */
-    --border-color: transparent; /* Eliminar el borde por defecto */
-  }
-  
-  ion-title {
-    font-size: 1.6rem; /* Aumenta un poco más el tamaño del texto */
-    font-weight: bold; /* Texto en negrita */
-    text-align: center;
-    line-height: 1.5; /* Asegura que la "G" no se corte */
-    letter-spacing: 0.5px; /* Aumenta el espacio entre las letras */
-  }
-  ion-toolbar {
-    padding: 10px; /* Añadir espacio extra para mejorar legibilidad */
-  }
-  
-  /* Estilo para el título h2 */
-  h2.title {
-    color: #000000; /* Color de texto oscuro (azul oscuro) */
-    font-weight: bold; /* Negrita para mejor visibilidad */
-    font-size: 2rem; /* Aumenta el tamaño del título */
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  ion-item {
-    font-weight: bold; /* Aseguramos que los labels de los inputs también estén en negrita */
-    --color: #000000; /* Texto oscuro para mejor contraste */
-  }
-  
-  ion-label {
-    font-weight: bold; /* Negrita para los textos de los labels */
-    color: #000000; /* Color del texto de las etiquetas */
-    font-size: 1.2rem; /* Tamaño adecuado para mejorar la legibilidad */
-  }
-  
-  ion-input {
-    --color: #000000; /* Texto oscuro para el input */
-    font-weight: bold; /* Hacer que el texto ingresado también esté en negrita */
-    font-size: 1rem; /* Ajuste del tamaño de fuente */
-  }
-  
-  .example-button-row {
-    margin-top: 15px;
-  }
-  
-  a[mat-button] {
-    color: #02d4c6; /* Color azul vivo */
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 15px;
-  }
-  
-  button.mat-raised-button {
-    font-weight: bold;
-    border-radius: 8px;
-    transition: transform 0.2s ease;
-  }
-  
-  button.mat-raised-button:hover {
-    transform: scale(1.05); /* Efecto de hover */
-  }
-  
-  /* Fondo azul claro para el contenido */
-  ion-content {
-    --background: #e3fdfb; /* Fondo de color azul claro */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .login-logo-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px; // Ajusta el margen superior según tus necesidades
-  }
-  
-  .login-logo {
-    max-width: 200px; // Ajusta el tamaño del logo según el diseño
-    height: auto;
-  }
-  /* Contenedor del formulario */
-  .container {
-    padding: 20px;
-    max-width: 400px;
-    margin: 0 auto;
-    background-color:#eafdfb; /* Fondo blanco para contraste */
-    border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra para el contenedor */
-  }
-  
-  /* Estilos para los campos de texto de Angular Material */
-  mat-form-field {
-    width: 100%;
-    margin-bottom: 15px;
-  
-    .mat-form-field-label {
-      color: #e3fdfb; /* Cambiar color de la etiqueta */
-      font-weight: bold; /* Etiquetas en negrita */
-      font-size: 1.2rem; /* Tamaño del texto de la etiqueta */
-    }
-  
-    .mat-input-element {
-      font-weight: bold; /* Texto en negrita */
-      color: #000000; /* Texto oscuro para mejor contraste */
-    }
-  
-    .mat-form-field-ripple {
-      background-color: #02d4c6; /* Cambiar color de la línea de enfoque */
-    }
-  }
-  
-  /* Estilo para los mensajes de error */
-  ion-text {
-    font-size: 0.9rem;
-    font-weight: bold;
-  }
-  
-  /* Botón de ingresar */
-  button[mat-raised-button] {
-    font-weight: bold;
-    color: #070707;
-    background-color: #02d4c6;
-    border-radius: 8px;
-    transition: transform 0.2s ease;
-  
-    &:hover {
-      background-color: #02d4c6; /* Cambiar color de hover */
-      transform: scale(1.05); /* Animación de hover */
-    }
-  
-    &:disabled {
-      background-color: #02d4c6; /* Color de botón deshabilitado */
-      cursor: not-allowed;
-    }
-  }
-  
-  /* Botones de crear cuenta y restablecer contraseña */
-  button[mat-button] {
-    font-weight: bold;
-    color: #02d4c6;
-  
-    &:hover {
-      color: #02d4c6; /* Cambiar color de hover */
-    }
-  }
-  
+}

@@ -1,229 +1,92 @@
+/* Encabezado personalizado para la toolbar */
 .custom-toolbar {
-  --background: #8000ff; /* Fondo azul */
-  --color: #fefefe; /* Letras blancas */
-  --border-color: transparent; /* Eliminar el borde por defecto */
+  --background: #02d4c6; /* Fondo azul */
+  --color: #000000; /* Letras blancas */
 }
 
+/* Título del toolbar */
 ion-title {
-  font-size: 1.6rem; /* Aumenta un poco más el tamaño del texto */
-  font-weight: bold; /* Texto en negrita */
+  font-size: 1.6rem; 
+  font-weight: bold; 
   text-align: center;
-  line-height: 1.5; /* Asegura que la "G" no se corte */
-  letter-spacing: 0.5px; /* Aumenta el espacio entre las letras */
+  line-height: 1.5; 
+  letter-spacing: 0.5px; 
 }
 
-ion-back-button {
-  --color: #ffffff; /* Color blanco para el texto del botón */
-  font-weight: bold; /* Negrita para el botón de retroceso */
-}
-
-ion-toolbar {
-  padding: 10px; /* Añadir espacio extra para mejorar legibilidad */
-}
-
+/* Fondo del contenido - NO se cambiará */
 ion-content {
-  --background: #f7f1ff; /* Fondo de color azul claro */
-  --title--color: #8000ff;
-  color: #060606; /* Texto en color oscuro para mejor contraste */
-  font-size: 1.2rem; /* Ajusta el tamaño base del texto para mejorar la legibilidad */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  --background: #e3fdfb; /* Fondo de color azul claro */
 }
 
-.page-title {
-  font-size: 1.5rem; /* Tamaño del título */
-  text-align: center;
-  margin-bottom: 20px; /* Margen para separar del contenido */
-}
-
-.container {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+/* Ajustes específicos para ion-item y sus componentes hijos */
 ion-item {
-  --color: #000001;
-  --highlight-background: #dac0ff;
-  --background: #e4d0ff;
-  --background-activated: #8000ff; /* Color del botón al presionarlo */
-  --background-focused: #e4d0ff;
-  margin-bottom: 15px;
-  color: #060606; /* Texto en color oscuro para mejor contraste */
-  font-weight: bold; /* Texto en negrita para mayor visibilidad */
+  --background: transparent; /* Fondo transparente para que se vea el fondo del ion-content */
 }
 
-#map_canvas {
-  width: 100%;
-  height: 300px;
-  margin-top: 16px;
-}
-
-ion-button,
-button[mat-button] {
-  margin-top: 20px;
-  width: 100%;
-  --background: #e4d0ff; /* Color de los botones en azul */
-  --background-activated: #8000ff; /* Color del botón al presionarlo */
-  --background-focused: #8000ff;
-  --border-radius: 12px;
-  --color: rgb(0, 0, 0);
-  font-size: 18px;
-  font-weight: bold; /* Texto en negrita en el botón */
-}
-
-ion-button.schedule-button {
-  --background: #c79eff; /* Color de los botones */
-  --background-activated: #8000ff; /* Color del botón al presionarlo */
-  --background-focused: #e4d0ff;
-}
-
+/* Cambiar color de las etiquetas ion-label */
 ion-label {
-  font-size: 2rem; /* Ajuste del tamaño de la etiqueta */
+  color: #000000 !important; /* Forzar color negro para mejor visibilidad */
+  font-weight: bold !important; /* Texto en negrita */
+  font-size: 1rem !important; /* Tamaño de fuente adecuado */
 }
 
-input {
-  font-weight: bold; /* Aseguramos que el texto autocompletado se vea bien */
-  color: #060606;
-}
-
+/* Cambiar color del texto ingresado en ion-input */
 ion-input {
-  --color: #060606;
-  --padding-start: 10px;
+  --color: #000000 !important; /* Texto negro en el campo de entrada */
+  --placeholder-color: #666666 !important; /* Color del placeholder gris para contraste */
+  font-weight: bold; /* Texto en negrita */
 }
 
-button[mat-raised-button] {
-  font-weight: bold;
-  color: #000000;
-  background-color: #8000ff;  /* Color de fondo azul brillante */
-  border-radius: 8px;  /* Bordes redondeados */
-  width: 100%;  /* Asegura que el botón ocupe el 100% del ancho */
-  padding: 12px;  /* Padding para asegurar que el texto esté centrado */
-  transition: transform 0.2s ease;
-
-  &:hover {
-    background-color: #8000ff;  /* Color de hover */
-    transform: scale(1.05);  /* Efecto de hover */
-  }
-
-  &:disabled {
-    background-color: #000000;  /* Color de botón deshabilitado */
-    cursor: not-allowed;
-  }
+/* Cambiar color de las opciones del ion-select */
+ion-select {
+  --color: #000000 !important; /* Texto negro para las opciones del select */
 }
 
+/* Cambiar color de los textos en ion-datetime */
 ion-datetime {
-  --background: #e4d0ff; /* Fondo azul claro */
-  --background-color: #8000ff;
-  --color: #000000; /* Texto en color negro */
-  --color-selected: #000000; /* Texto seleccionado en negro */
-  --highlight-background: #a406f3; /* Fondo del día seleccionado en blanco */
-  --highlight-color: #8000ff; /* Color del día seleccionado */
-  --border-radius: 10px; /* Bordes redondeados */
-}
+  --color: #000000 !important; /* Texto negro en el calendario */
+  --placeholder-color: #666666 !important; /* Color del placeholder gris */
+  --background: #e3fdfb; /* Fondo de color azul claro */
+  --button-color: #000000; 
 
-ion-picker {
-  --background: #c79eff; /* Fondo más claro */
-  --color: #000000;
-  --button-color: #000000; /* Color del texto en los botones */
-  --button-background: #6e06ff; /* Fondo de los botones */
-  --title-color: #8000ff;
 }
-
 ::ng-deep .mat-calendar {
   background-color: #ecdeff !important; /* Fondo azul claro */
   color: #000 !important; /* Texto en negro */
 }
 
-/* Cambiar color del día seleccionado */
-::ng-deep .mat-calendar-body-selected {
-  background-color: #8000ff !important; /* Fondo azul para el día seleccionado */
-  color: #050505 !important; /* Texto blanco para el día seleccionado */
+/* Estilo de los botones dentro del formulario */
+ion-button {
+  margin: 10px 0;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+
+  &.button-save {
+    --background: #02d4c6; /* Verde para el botón de guardar */
+    --color: #000000; /* Texto blanco */
+  }
+
+  &.button-cancel {
+    --background: #02d4c6; /* Rojo para el botón de cancelar */
+    --color: #030303; /* Texto blanco */
+  }
 }
 
-/* Cambiar el color de los días al hacer hover */
-::ng-deep .mat-calendar-body-cell:hover {
-  background-color: #8000ff !important; /* Color azul oscuro al pasar el ratón */
-  color: #000000 !important; /* Texto blanco al hacer hover */
+/* Asegurar que los botones de edición tengan el color adecuado */
+.edit-profile-button {
+  --background: #02d4c6; 
+  --color: #000000; 
+  font-weight: bold;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05); 
+  }
+  
 }
-
-/* Cambiar color de los días deshabilitados */
-::ng-deep .mat-calendar-body-disabled {
-  color: rgb(247, 16, 16) !important; /* Color gris para días deshabilitados */
-}
-
-/* Cambiar el color de los botones de navegación (meses/años) */
-::ng-deep .mat-calendar-next-button, 
-::ng-deep .mat-calendar-previous-button {
-  color: #8000ff !important; /* Color de las flechas de navegación */
-}
-
-/* Cambiar color del mes seleccionado */
-::ng-deep .mat-calendar-period-button {
-  color: #8000ff !important; /* Color del botón de mes */
-}
-
-
-.container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.sb-title {
-  position: relative;
-  top: -12px;
-  font-family: Roboto, sans-serif;
-  font-weight: 500;
-}
-
-.sb-title-icon {
-  position: relative;
-  top: -5px;
-}
-
-gmpx-split-layout {
-  height: 500px;
-  width: 600px;
-}
-
-gmpx-split-layout:not(:defined) {
-  visibility: hidden;
-}
-
-.panel {
-  background: white;
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.half-input-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.half-input {
-  max-width: 120px;
-}
-
-input {
-  height: 30px;
-  border: 0;
-  border-bottom: 1px solid black;
-  font-size: 14px;
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-}
-
-input:focus::placeholder {
-  color: white;
+ion-select-option {
+  --color: #000000 !important; /* Forzar el color negro para las opciones del selector */
+  font-weight: bold; /* Negrita para asegurar legibilidad */
 }

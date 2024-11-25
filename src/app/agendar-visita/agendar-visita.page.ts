@@ -31,6 +31,23 @@ export class AgendarVisitaPage implements OnInit {
 
   constructor(private router: Router, private storage: Storage, private platform: Platform) { }
 
+  // Formatear la fecha ingresada
+  formatDate(event: any) {
+    let input = event.target.value;
+
+    // Remover cualquier carácter que no sea un número
+    input = input.replace(/\D/g, '');
+
+    // Agregar slash (/) en las posiciones adecuadas
+    if (input.length > 2 && input.length <= 4) {
+      input = input.substring(0, 2) + '/' + input.substring(2);
+    } else if (input.length > 4) {
+      input = input.substring(0, 2) + '/' + input.substring(2, 4) + '/' + input.substring(4, 8);
+    }
+
+    this.selectedDate = input;
+  }
+
   async ngOnInit() {
     await this.platform.ready();
     await this.getCurrentPosition(); // Asegúrate de tener los permisos
