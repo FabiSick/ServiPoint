@@ -1,3 +1,16 @@
+/* Sobrescribir globalmente el estilo del toolbar */
+ion-toolbar {
+  --background: #02d4c6 !important; /* Cambia el fondo del toolbar */
+  --color: #000000 !important; /* Cambia el color del texto a blanco */
+}
+
+/* Cambiar el título de todas las páginas */
+ion-title {
+  color: #000000 !important;
+  font-weight: bold;
+}
+
+
 :host {
   display: flex;
   justify-content: center;

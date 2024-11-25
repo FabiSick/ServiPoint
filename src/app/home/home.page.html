@@ -4,6 +4,9 @@
   <ion-menu contentId="main-content">
     <ion-header [translucent]="true">
       <ion-toolbar class="custom-toolbar">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
         <ion-title class="text-center">ServiPoint</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -11,7 +14,7 @@
       <div>
         <ion-card>
           <ion-card-header>
-            <ion-card-title>{{ nombreUsuario }}</ion-card-title> <!-- Muestra el nombre del usuario -->
+            <ion-card-title>{{ "nombreUsuario" }}</ion-card-title> <!-- Muestra el nombre del usuario -->
           </ion-card-header>
           <ion-card-content>
             <ion-button expand="full" color="primary" (click)="goToProfile()">
