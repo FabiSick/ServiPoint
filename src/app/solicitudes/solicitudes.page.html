@@ -8,9 +8,19 @@
 </ion-header>
 
 <ion-content>
-  <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
-    
-   
-    
+  <!-- Mostrar mensaje si no hay solicitudes -->
+  <div *ngIf="!solicitudes || solicitudes.length === 0" class="no-data">
+    <p>No tienes solicitudes creadas.</p>
   </div>
+
+  <!-- Lista de solicitudes -->
+  <ion-list *ngIf="solicitudes && solicitudes.length > 0">
+    
+    <ion-card *ngFor="let request of solicitudes">
+      <ion-label>
+        <h2>{{ request.description }}</h2>
+        <p>Estado: {{ request.status }}</p>
+      </ion-label>
+    </ion-card>
+  </ion-list>
 </ion-content>

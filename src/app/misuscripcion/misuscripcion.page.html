@@ -8,26 +8,42 @@
 </ion-header>
 
 <ion-content>
-  <!-- Lista de productos (subscripciones) -->
-  <div class="product-list">
-    <ion-card *ngFor="let product of products" class="product-card">
+  <!-- Productos Comprados -->
+  <div *ngIf="purchasedProducts.length > 0">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Suscripciones Compradas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let product of purchasedProducts">
+            <ion-label>
+              <h2>{{ product.name }}</h2>
+              <p><strong>Costo:</strong> {{ product.cost | currency:'CLP' }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Productos Disponibles -->
+  <div class="available-products">
+    <ion-card *ngFor="let product of products">
       <ion-card-header>
         <ion-card-title>{{ product.name }}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <p><strong>Costo:</strong> {{ product.cost | currency:'CLP' }}</p>
-        <ion-button *ngIf="!isProductPurchased(product.id)" color="success" (click)="addToCart(product)">
+        <ion-button color="success" (click)="addToCart(product)">
           <ion-icon name="cart-outline"></ion-icon> Añadir al Carrito
-        </ion-button>
-        <ion-button *ngIf="isProductPurchased(product.id)" color="tertiary" disabled>
-          Comprado
         </ion-button>
       </ion-card-content>
     </ion-card>
   </div>
 
   <!-- Carrito de Compras -->
-  <ion-card *ngIf="cart.length > 0" class="cart-card">
+  <ion-card *ngIf="cart.length > 0">
     <ion-card-header>
       <ion-card-title>Carrito de Compras</ion-card-title>
     </ion-card-header>
@@ -38,8 +54,7 @@
           <ion-button color="danger" (click)="removeFromCart(item)">Eliminar</ion-button>
         </ion-item>
       </ion-list>
-      <ion-button expand="block" color="primary" (click)="purchaseCart()">Comprar</ion-button>
+      <ion-button expand="block" color="tertiary" (click)="purchaseCart()">Comprar</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
-``

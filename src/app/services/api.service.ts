@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private usersApiUrl = 'http://localhost:3000/users';  // URL de la API REST para usuarios
-  private productsApiUrl = 'http://localhost:3000/products';  // URL de la API REST para productos (subscripciones)
+  private localhost = 'http://localhost:3000'; // URL base para la API REST
+  private usersApiUrl = `${this.localhost}/users`; // URL para usuarios
+  private productsApiUrl = `${this.localhost}/products`; // URL para productos
+  private requestsApiUrl = `${this.localhost}/requests`; // URL para solicitudes
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   // =========================== Métodos para Usuarios ===========================
   // Registrar un nuevo usuario
@@ -71,6 +74,38 @@ export class ApiService {
 
   // Obtener productos comprados por un usuario específico
   getUserProducts(userId: number): Observable<any> {
-    return this.http.get(`${this.usersApiUrl}/${userId}/products`);
+    return this.http.get(`${this.usersApiUrl}/${userId}`).pipe(
+      map((user: any) => {
+        if (user && user.products) {
+          return user.products; // Devuelve los productos comprados por el usuario
+        } else {
+          return []; // Si no hay productos, devuelve un array vacío
+        }
+      })
+    );
+  }
+
+  // =========================== Métodos para Solicitudes ===========================
+  // Crear una solicitud
+  createRequest(request: any): Observable<any> {
+    return this.http.post(this.requestsApiUrl, request);
+  }
+
+  // Obtener solicitudes de un usuario
+  getRequestsByUser(userId: number): Observable<any> {
+    return this.http.get(`${this.requestsApiUrl}?userId=${userId}`);
+  }
+
+  // Obtener el usuario actual (puede ser reemplazado por lógica real del backend)
+  getCurrentUser(): Observable<any> {
+    return this.getUsers().pipe(
+      map((users: any[]) => {
+        if (users.length > 0) {
+          return users[0]; // Simula que el primer usuario es el actual
+        } else {
+          throw new Error('No se encontraron usuarios.');
+        }
+      })
+    );
   }
 }

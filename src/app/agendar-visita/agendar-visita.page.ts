@@ -4,6 +4,9 @@ import { Storage } from '@ionic/storage-angular';
 import { GoogleMap, Marker } from '@capacitor/google-maps';
 import { Geolocation } from '@capacitor/geolocation';
 import { Platform } from '@ionic/angular';
+import { ApiService } from '../services/api.service';
+import { ToastController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-agendar-visita',
@@ -11,6 +14,7 @@ import { Platform } from '@ionic/angular';
   styleUrls: ['./agendar-visita.page.scss'],
 })
 export class AgendarVisitaPage implements OnInit {
+  userId: number = 1; // Reemplaza con el ID dinámico del usuario
 
   @ViewChild('map', { static: false }) mapElement!: ElementRef;
   map!: GoogleMap;
@@ -29,7 +33,13 @@ export class AgendarVisitaPage implements OnInit {
     '4:00 PM - 5:00 PM'
   ];
 
-  constructor(private router: Router, private storage: Storage, private platform: Platform) { }
+  constructor(
+    private router: Router,
+     private storage: Storage, 
+     private platform: Platform,
+     private apiService: ApiService,
+     private toastController: ToastController,
+    ) { }
 
   // Formatear la fecha ingresada
   formatDate(event: any) {
@@ -121,20 +131,48 @@ export class AgendarVisitaPage implements OnInit {
     } else {
       alert('Por favor, selecciona una ubicación en el mapa.');
     }
+  
   }
-
   async onSubmit() {
     if (this.selectedDate && this.selectedTime && this.userAddress) {
+      // Detalles de la visita
       const visitDetails = {
         date: this.selectedDate,
         time: this.selectedTime,
-        address: this.userAddress
+        address: this.userAddress,
+        userId: this.userId, // Agregamos el ID del usuario
       };
-      console.log('Visita agendada:', visitDetails);
-      alert('Visita agendada exitosamente!');
-      this.router.navigate(['/home']);
+
+      console.log('Agendando visita:', visitDetails);
+
+      // Crear solicitud asociada a la visita
+      this.apiService.createRequest({
+        userId: this.userId,
+        description: `Visita agendada: ${this.selectedDate} a las ${this.selectedTime}, dirección: ${this.userAddress}.`,
+        status: 'Pendiente',
+      }).subscribe(
+        () => {
+          this.showToast('Visita agendada y solicitud creada exitosamente.');
+          this.router.navigate(['/home']);
+        },
+        (error) => {
+          console.error('Error al crear la solicitud:', error);
+          this.showToast('Hubo un error al agendar la visita.');
+        }
+      );
     } else {
-      alert('Por favor, completa todos los campos.');
+      this.showToast('Por favor, completa todos los campos.');
     }
   }
+
+  // Mostrar mensaje de notificación
+  async showToast(message: string) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 2000,
+    });
+    toast.present();
+  }
+
 }
+

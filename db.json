@@ -4,7 +4,17 @@
       "id": "1",
       "username": "admin",
       "password": "Spoint1234...",
-      "role": "admin"
+      "role": "admin",
+      "products": [
+        { "id": "0", "name": "Anual", "cost": 99990 }
+      ],
+      "requests": [
+        {
+          "id": "86c1",
+          "description": "El usuario inició un chat en vivo a través de WhatsApp.",
+          "status": "Pendiente"
+        }
+      ]
     },
     {
       "id": "47ec",
@@ -13,7 +23,26 @@
       "password": "cARL1234...",
       "role": "user",
       "nombre": "Carla Mejias",
-      "telefono": "12345678"
+      "telefono": "12345678",
+      "products": [
+        
+      ],
+      "requests": [
+        {
+          "id": "47ec1",
+          "description": "Carla solicitó soporte técnico.",
+          "status": "Pendiente"
+        }
+      ]
+    },
+    {
+      "id": "c300",
+      "username": "Sebastian",
+      "email": "seba.alberto@gmail.com",
+      "password": "Sebas1234...",
+      "role": "user",
+      "products": [],
+      "requests": []
     }
   ],
   "products": [
@@ -23,14 +52,28 @@
       "cost": 99990
     },
     {
-      "id": null,
+      "id": "1",
       "name": "Mensual",
       "cost": 9990
     },
     {
-      "id": 0,
+      "id": "2",
       "name": "3 Meses",
       "cost": 25990
+    }
+  ],
+  "requests": [
+    {
+      "id": "86c1",
+      "userId": "1",
+      "description": "El usuario inició un chat en vivo a través de WhatsApp.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "47ec1",
+      "userId": "47ec",
+      "description": "Carla solicitó soporte técnico.",
+      "status": "Pendiente"
     }
   ]
 }
